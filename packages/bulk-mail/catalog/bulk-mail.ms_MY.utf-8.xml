@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ms_MY" charset="utf-8">
+
+  <msg key="Cancelled">Dibatal</msg>
+  <msg key="Extra_Headers">Pengatas Lebihan</msg>
+  <msg key="From">Daripada</msg>
+  <msg key="lt_No_bulk_mail_messages">Tiada mesej mel pukal untuk dipaparkan.</msg>
+  <msg key="Message">Mesej</msg>
+  <msg key="Message_not_sent_yet">Mesej ini belum dihantar lagi. Anda boleh &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;batalkan&lt;/a&gt;nya.</msg>
+  <msg key="No">Tidak</msg>
+  <msg key="Pending">Tertangguh</msg>
+  <msg key="pretty_name">Mel Pukal</msg>
+  <msg key="Query">Pertanyaan</msg>
+  <msg key="Reply_To">Maklumbalas Kepada</msg>
+  <msg key="Send_Date">Tarik Di Hantar</msg>
+  <msg key="Sent">Di Hantar?</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Subject">Subjek</msg>
+  <msg key="Yes">Ya</msg>
+</message_catalog>

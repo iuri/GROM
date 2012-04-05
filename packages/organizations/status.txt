@@ -1,0 +1,10 @@
+11/24/03 Jade Rubick
+
+Note that the Oracle code is out of sync with the Postgres code. The
+source code has comments in it indicating what needs to be updated to
+make things work correctly.
+
+The Postgres code is the reference version at this point. 
+
+In general, getting things in sync will not be that difficult. The
+/sql/oracle files will need to be updated, and that's about it.

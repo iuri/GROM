@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="Extra_Headers">Intestazioni Aggiuntive</msg>
+  <msg key="From">Da</msg>
+  <msg key="lt_No_bulk_mail_messages">Nessun messaggio di massa da visualizzare.</msg>
+  <msg key="Message">Messaggio</msg>
+  <msg key="No">No</msg>
+  <msg key="pretty_name">Invio mail di massa</msg>
+  <msg key="Query">Query</msg>
+  <msg key="Reply_To">Rispondi a</msg>
+  <msg key="Send_Date">Data d'invio</msg>
+  <msg key="Sent">Inviato?</msg>
+  <msg key="Subject">Oggetto</msg>
+  <msg key="Yes">Sì</msg>
+</message_catalog>

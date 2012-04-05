@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ru_RU" charset="utf-8">
+
+  <msg key="Extra_Headers">Дополнительные Заголовки</msg>
+  <msg key="From">От</msg>
+  <msg key="lt_No_bulk_mail_messages">Нет сообщений массовой рассылки.</msg>
+  <msg key="Message">Сообщение</msg>
+  <msg key="No">Нет</msg>
+  <msg key="pretty_name">Массовая Рассылка</msg>
+  <msg key="Query">Запрос</msg>
+  <msg key="Reply_To">Ответить Автору</msg>
+  <msg key="Send_Date">Дата Отсылки</msg>
+  <msg key="Sent">Выслано?</msg>
+  <msg key="Subject">Предмет</msg>
+  <msg key="Yes">Да</msg>
+</message_catalog>

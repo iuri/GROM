@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="fi_FI" charset="utf-8">
+
+  <msg key="Extra_Headers">Lisäotsikot</msg>
+  <msg key="From">Lähettäjä</msg>
+  <msg key="lt_No_bulk_mail_messages">Ei ryhmäviestejä näytettävänä</msg>
+  <msg key="Message">Viesti</msg>
+  <msg key="No">Ei</msg>
+  <msg key="pretty_name">Ryhmäviesti</msg>
+  <msg key="Query">Kysely</msg>
+  <msg key="Reply_To">Vastaa</msg>
+  <msg key="Send_Date">Lähetyspäivämäärä</msg>
+  <msg key="Sent">Lähetetty?</msg>
+  <msg key="Subject">Aihe</msg>
+  <msg key="Yes">Kyllä</msg>
+</message_catalog>

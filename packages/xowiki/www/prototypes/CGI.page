@@ -1,0 +1,11 @@
+# -*- tcl-*-
+# $Id: CGI.page,v 1.2 2011/02/28 12:02:31 po34demo Exp $
+::xowiki::Object new -title "CGI" -text {
+  proc content {} {
+    return "Hello \[\[Wiki\]\]-World. It is now [clock format [clock seconds]]."
+  }
+
+}
+
+
+

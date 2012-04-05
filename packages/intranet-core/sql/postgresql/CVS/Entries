@@ -1,0 +1,22 @@
+/intranet-audit-create.sql/1.5/Tue Feb 10 23:02:10 2009//
+/intranet-biz-objects.sql/1.27/Sun Nov 13 17:32:36 2011//
+/intranet-categories.sql/1.23/Wed Jul 20 10:20:10 2011//
+/intranet-companies.sql/1.14/Wed Mar 18 18:18:26 2009//
+/intranet-components.sql/1.36/Wed Apr  6 10:42:49 2011//
+/intranet-core-create.sql/1.17/Wed Sep 21 14:09:54 2011//
+/intranet-core-drop.sql/1.9/Wed Sep 21 14:09:54 2011//
+/intranet-country-codes.sql/1.6/Thu Oct 12 16:02:10 2006//
+/intranet-currency-codes.sql/1.7/Tue Feb 10 15:32:32 2009//
+/intranet-defs.sql/1.7/Fri Jan 20 19:40:04 2012//
+/intranet-menus.sql/1.43/Tue Oct 11 08:22:32 2011//
+/intranet-notifications.sql/1.1/Thu Mar  8 01:18:06 2007//
+/intranet-offices.sql/1.11/Thu Mar  5 10:53:39 2009//
+/intranet-openacs-patches.sql/1.2/Mon May  4 19:40:49 2009//
+/intranet-performance-log.sql/1.1/Thu Mar 12 18:50:58 2009//
+/intranet-permissions.sql/1.22/Mon May  4 19:40:49 2009//
+/intranet-projects.sql/1.38/Thu Feb  9 15:57:37 2012//
+/intranet-users.sql/1.21/Fri May 13 12:50:02 2011//
+/intranet-views.sql/1.12/Tue Feb 17 17:20:18 2009//
+/pgdump-views.sql/1.2/Fri Apr  7 22:42:03 2006//
+/workflow-project_approval_wf-create.sql/1.1/Wed Jun 25 17:05:42 2008//
+D/upgrade////

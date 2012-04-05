@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ar_EG" charset="utf-8">
+
+  <msg key="From">منّ</msg>
+  <msg key="lt_No_bulk_mail_messages">.لا رسائلَ في بريدِ الدعايات للعَرْض</msg>
+  <msg key="Message">رسالة</msg>
+  <msg key="No">لا</msg>
+  <msg key="pretty_name">بريد الدعايات</msg>
+  <msg key="Query">إستفسارُ</msg>
+  <msg key="Reply_To">أجّب إلى</msg>
+  <msg key="Send_Date">أرسلْ تأريخاً</msg>
+  <msg key="Sent">أرسلْ؟</msg>
+  <msg key="Subject">موضوعُ</msg>
+  <msg key="Yes">نعم</msg>
+</message_catalog>

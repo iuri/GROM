@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="pl_PL" charset="utf-8">
+
+  <msg key="Extra_Headers">Dodatkowe Nagłówki</msg>
+  <msg key="From">Od</msg>
+  <msg key="lt_No_bulk_mail_messages">Brak komunikatów do wyświetlenia.</msg>
+  <msg key="Message">Komunikat</msg>
+  <msg key="No">Nie</msg>
+  <msg key="pretty_name">Poczta Hurtowa</msg>
+  <msg key="Query">Pytanie</msg>
+  <msg key="Reply_To">Odpowiedz</msg>
+  <msg key="Send_Date">Data Wysłania</msg>
+  <msg key="Sent">Wysłać?</msg>
+  <msg key="Subject">Temat</msg>
+  <msg key="Yes">Tak</msg>
+</message_catalog>

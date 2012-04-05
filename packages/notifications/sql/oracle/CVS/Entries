@@ -1,0 +1,11 @@
+/notifications-core-create.sql/1.2/Wed Oct 20 02:08:05 2010//
+/notifications-core-drop.sql/1.2/Wed Oct 20 02:08:06 2010//
+/notifications-create.sql/1.2/Wed Oct 20 02:08:06 2010//
+/notifications-init.sql/1.2/Wed Oct 20 02:08:06 2010//
+/notifications-package-create.sql/1.2/Wed Oct 20 02:08:07 2010//
+/notifications-package-drop.sql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/notifications-replies-create.sql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/notifications-replies-extra-create.sql/1.2/Wed Oct 20 02:08:07 2010//
+/notifications-replies-extra-drop.sql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/notifications-replies-package-create.sql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+D/upgrade////

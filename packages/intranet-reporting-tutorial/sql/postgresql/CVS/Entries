@@ -1,0 +1,22 @@
+/absences.sql/1.4/Wed Nov 11 14:16:15 2009//
+/categories.sql/1.4/Thu Feb 28 09:47:40 2008//
+/companies.sql/1.4/Thu Feb 28 09:47:40 2008//
+/cost-centers.sql/1.3/Thu Feb 28 09:47:40 2008//
+/costs.sql/1.7/Thu Feb 28 09:47:40 2008//
+/forums.sql/1.3/Thu Feb 28 09:47:40 2008//
+/freelance-skills.sql/1.2/Tue Sep 26 21:45:39 2006//
+/intranet-reporting-tutorial-create.sql/1.5/Tue Feb 17 17:20:27 2009//
+/intranet-reporting-tutorial-drop.sql/1.2/Tue Feb 17 17:20:27 2009//
+/invoices.sql/1.4/Tue Jan 13 14:15:09 2009//
+/menus.sql/1.7/Tue Feb 17 17:20:28 2009//
+/payments.sql/1.3/Tue Sep 26 21:45:39 2006//
+/projects.sql/1.4/Tue Sep 26 21:45:39 2006//
+/timesheet-invoice.sql/1.2/Tue Sep 26 21:45:39 2006//
+/timesheet-prices.sql/1.2/Tue Sep 26 21:45:39 2006//
+/timesheet-tasks.sql/1.3/Tue Sep 26 21:45:39 2006//
+/timesheet.sql/1.2/Tue Sep 26 21:45:39 2006//
+/trans-invoices.sql/1.2/Tue Sep 26 21:45:39 2006//
+/trans-prices.sql/1.2/Tue Sep 26 21:45:39 2006//
+/trans-tasks.sql/1.2/Tue Sep 26 21:45:39 2006//
+/users.sql/1.3/Tue Sep 26 21:45:39 2006//
+D/upgrade////

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5" locale="ch_zh" charset="utf-8">
+
+  <msg key="Extra_Headers">特大标题</msg>
+  <msg key="From">从</msg>
+  <msg key="lt_No_bulk_mail_messages">没有要显示的群发邮件信息。</msg>
+  <msg key="Message">信息</msg>
+  <msg key="No">不是</msg>
+  <msg key="pretty_name">群发邮件</msg>
+  <msg key="Query">查询</msg>
+  <msg key="Reply_To">回复</msg>
+  <msg key="Send_Date">发送日期</msg>
+  <msg key="Sent">要发送吗？</msg>
+  <msg key="Subject">主题</msg>
+  <msg key="Yes">是</msg>
+</message_catalog>

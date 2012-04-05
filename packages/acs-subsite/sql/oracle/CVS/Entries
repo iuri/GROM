@@ -1,0 +1,23 @@
+/acs-subsite-create.sql/1.2/Tue Oct 19 20:12:14 2010//
+/acs-subsite-drop.sql/1.2/Tue Oct 19 20:12:14 2010//
+/application-groups-create.sql/1.2/Tue Oct 19 20:12:14 2010//
+/application-groups-drop.sql/1.2/Tue Oct 19 20:12:14 2010//
+/attribute.sql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/attributes-drop.sql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/email-image-drop.sql/1.2/Wed Oct 20 00:02:03 2010//
+/email-image.sql/1.2/Wed Oct 20 00:02:03 2010//
+/host-node-map-create.sql/1.2/Tue Oct 19 20:12:14 2010//
+/host-node-map-drop.sql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/portraits-drop.sql/1.2/Tue Oct 19 20:12:15 2010//
+/portraits.sql/1.2/Tue Oct 19 20:12:15 2010//
+/site-node-selection-drop.sql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/site-node-selection.sql/1.2/Tue Oct 19 20:12:15 2010//
+/subsite-callbacks-create.sql/1.2/Tue Oct 19 20:12:15 2010//
+/subsite-callbacks-drop.sql/1.2/Tue Oct 19 20:12:15 2010//
+/themes-drop.sql/1.1/Wed Oct 20 00:02:03 2010//
+/user-profiles-create.sql/1.2/Tue Oct 19 20:12:15 2010//
+/user-profiles-drop.sql/1.2/Tue Oct 19 20:12:15 2010//
+/user-sc-create.sql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+D/tests////
+D/upgrade////
+/themes-create.sql/1.2/Fri Feb 10 18:17:00 2012//

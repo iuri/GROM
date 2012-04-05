@@ -1,0 +1,34 @@
+/index.tcl/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/manage-oracle.xql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/manage-postgresql.xql/1.2/Wed Oct 20 02:08:19 2010//
+/manage.adp/1.2/Wed Oct 20 02:08:19 2010//
+/manage.tcl/1.2/Wed Oct 20 02:08:19 2010//
+/object-goto.tcl/1.2/Wed Oct 20 02:08:19 2010//
+/object-goto.xql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/request-change-frequency-oracle.xql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/request-change-frequency-postgresql.xql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/request-change-frequency.adp/1.2/Wed Oct 20 02:08:20 2010//
+/request-change-frequency.tcl/1.2/Wed Oct 20 02:08:20 2010//
+/request-change-frequency.xql/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/request-delete.tcl/1.2/Wed Oct 20 02:08:20 2010//
+/request-new-2.tcl/1.2/Wed Oct 20 02:08:21 2010//
+/request-new.adp/1.2/Wed Oct 20 02:08:21 2010//
+/request-new.tcl/1.2/Wed Oct 20 02:08:22 2010//
+/request-notification.adp/1.1/Wed Oct 20 02:09:30 2010//
+/request-notification.tcl/1.1/Wed Oct 20 02:09:31 2010//
+/request-notification.xql/1.1/Wed Oct 20 02:09:31 2010//
+/request-unsubscribe-notification.adp/1.1/Wed Oct 20 02:09:31 2010//
+/request-unsubscribe-notification.tcl/1.1/Wed Oct 20 02:09:32 2010//
+/request-unsubscribe-notification.xql/1.1/Wed Oct 20 02:09:32 2010//
+/subscribers-oracle.xql/1.1/Wed Oct 20 02:09:33 2010//
+/subscribers-postgresql.xql/1.1/Wed Oct 20 02:09:33 2010//
+/subscribers.adp/1.1/Wed Oct 20 02:09:34 2010//
+/subscribers.tcl/1.1/Wed Oct 20 02:09:35 2010//
+/subscribers.xql/1.1/Wed Oct 20 02:09:38 2010//
+/test-cleanup.tcl/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/test.adp/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/test.tcl/1.1.1.1/Wed Oct 25 17:55:56 2006//
+/unsubscribe.tcl/1.1/Wed Oct 20 02:09:39 2010//
+/unsubscribe.xql/1.1/Wed Oct 20 02:09:39 2010//
+D/admin////
+D/doc////

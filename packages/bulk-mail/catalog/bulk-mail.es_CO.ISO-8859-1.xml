@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="es_CO" charset="ISO-8859-1">
+
+  <msg key="Extra_Headers">Otros encabezados</msg>
+  <msg key="From">De</msg>
+  <msg key="lt_No_bulk_mail_messages">Ningún mensaje de correo que mostrar.</msg>
+  <msg key="Message">Mensaje</msg>
+  <msg key="No">No</msg>
+  <msg key="pretty_name">Servicio de correo</msg>
+  <msg key="Query">Solicitud</msg>
+  <msg key="Reply_To">Responder a</msg>
+  <msg key="Send_Date">Fecha de envío</msg>
+  <msg key="Sent">¿Enviado?</msg>
+  <msg key="Subject">Título</msg>
+  <msg key="Yes">Sí</msg>
+</message_catalog>

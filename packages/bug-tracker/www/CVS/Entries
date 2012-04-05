@@ -1,0 +1,42 @@
+/bug-add.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/bug-add.tcl/1.5/Wed Mar 12 07:57:57 2008//
+/bug-submission-instructions.html/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/bug.adp/1.4/Mon Oct 29 15:48:34 2007//
+/bug.tcl/1.6/Wed Mar 12 08:12:53 2008//
+/bug.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/index.adp/1.6/Wed May 27 18:13:07 2009//
+/index.tcl/1.5/Wed Jul 28 12:14:23 2010//
+/map-patch-to-bugs-oracle.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/map-patch-to-bugs-postgresql.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/map-patch-to-bugs.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/map-patch-to-bugs.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/map-patch-to-bugs.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/no-bugs.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/no-components.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/notifications.adp/1.2/Fri Jul  6 10:31:54 2007//
+/notifications.tcl/1.3/Fri Jul  6 10:31:54 2007//
+/patch-add-oracle.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-add-postgresql.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-add.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-add.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-add.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-list-oracle.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-list-postgresql.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-list.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-list.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-list.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-oracle.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-postgresql.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch-submission-instructions.html/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/patch.xql/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/prefs.adp/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/prefs.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/unmap-patch-from-bug.tcl/1.1.1.1/Wed Oct 25 17:55:10 2006//
+/watch_all_bugs.tcl/1.1/Fri Jul  6 10:31:54 2007//
+D/admin////
+D/com////
+D/doc////
+D/graphics////
+D/resources////

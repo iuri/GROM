@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ro_RO" charset="utf-8">
+
+  <msg key="Extra_Headers">Extra Titluri</msg>
+  <msg key="From">De la</msg>
+  <msg key="lt_No_bulk_mail_messages">Nu există mesaje bulk de afişat</msg>
+  <msg key="Message">Mesaj</msg>
+  <msg key="No">Nu</msg>
+  <msg key="pretty_name">Mesaje Bulk</msg>
+  <msg key="Query">Interogaţie</msg>
+  <msg key="Reply_To">Răspunde la</msg>
+  <msg key="Send_Date">Data trimiterii</msg>
+  <msg key="Sent">Trimis?</msg>
+  <msg key="Subject">Subiect</msg>
+  <msg key="Yes">Da</msg>
+</message_catalog>

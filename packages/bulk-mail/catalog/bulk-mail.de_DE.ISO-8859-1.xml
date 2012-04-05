@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="de_DE" charset="ISO-8859-1">
+
+  <msg key="Cancelled">Verworfen</msg>
+  <msg key="Extra_Headers">Zusätzliche Kopfzeilen</msg>
+  <msg key="From">Von</msg>
+  <msg key="lt_No_bulk_mail_messages">Keine Gruppen-E-Mails vorhanden</msg>
+  <msg key="Message">Nachricht</msg>
+  <msg key="Message_not_sent_yet">Diese Nachricht wurde noch nicht verschickt. Sie können sie &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;verwerfen&lt;/a&gt; it. </msg>
+  <msg key="No">Nein</msg>
+  <msg key="Pending">In Bearbeitung</msg>
+  <msg key="pretty_name">Gruppen-E-Mail</msg>
+  <msg key="Query">Abfrage</msg>
+  <msg key="Reply_To">Antworten</msg>
+  <msg key="Send_Date">Versenden am</msg>
+  <msg key="Sent">Gesendet?</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Subject">Betreff</msg>
+  <msg key="Yes">Ja</msg>
+</message_catalog>

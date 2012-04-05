@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ca_ES" charset="ISO-8859-1">
+
+  <msg key="Cancelled">Cancel·lat </msg>
+  <msg key="Extra_Headers">Altres encapçalaments </msg>
+  <msg key="From">De</msg>
+  <msg key="lt_No_bulk_mail_messages">No hi ha cap missatge de correu massiu per a mostrar.</msg>
+  <msg key="Message">Missatge</msg>
+  <msg key="Message_not_sent_yet">Aquest missatge no s'ha enviat encara. Podeu &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;cancel·lar&lt;/a&gt; -lo. </msg>
+  <msg key="No">No</msg>
+  <msg key="Pending">Pendent </msg>
+  <msg key="pretty_name">Correu massiu</msg>
+  <msg key="Query">Sol·licitud</msg>
+  <msg key="Reply_To">Contestar a</msg>
+  <msg key="Send_Date">Data d'enviament</msg>
+  <msg key="Sent">Enviat?</msg>
+  <msg key="Status">Estat </msg>
+  <msg key="Subject">Títol</msg>
+  <msg key="Yes">Sí</msg>
+</message_catalog>

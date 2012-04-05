@@ -1,0 +1,9 @@
+# 
+#
+# Redirect to administration
+#
+# @author Dave Bauer (dave@thedesignexperience.org)
+# @creation-date 2004-02-16
+# @cvs-id $Id: index.vuh,v 1.1.1.1 2010/10/20 02:10:25 po34demo Exp $
+
+ad_returnredirect "admin/"

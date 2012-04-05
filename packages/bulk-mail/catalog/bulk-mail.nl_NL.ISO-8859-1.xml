@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="nl_NL" charset="ISO-8859-1">
+
+  <msg key="Cancelled">Geannuleerd</msg>
+  <msg key="Extra_Headers">Extra kopregels</msg>
+  <msg key="From">Van</msg>
+  <msg key="lt_No_bulk_mail_messages">Er zijn geen mailingberichten beschikbaar.</msg>
+  <msg key="Message">Bericht</msg>
+  <msg key="Message_not_sent_yet">Dit bericht is nog niet verzonden. &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;Annuleren&lt;/a&gt; kan nog.</msg>
+  <msg key="No">Nee</msg>
+  <msg key="Pending">In behandeling</msg>
+  <msg key="pretty_name">Mailing</msg>
+  <msg key="Query">Vraag</msg>
+  <msg key="Reply_To">Antwoord aan</msg>
+  <msg key="Send_Date">Verzenddatum</msg>
+  <msg key="Sent">Verzonden?</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Subject">Onderwerp</msg>
+  <msg key="Yes">Ja</msg>
+</message_catalog>

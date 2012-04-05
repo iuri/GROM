@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="da_DK" charset="ISO-8859-1">
+
+  <msg key="Cancelled">Annulleret</msg>
+  <msg key="Extra_Headers">Ekstra Headers</msg>
+  <msg key="From">Fra</msg>
+  <msg key="lt_No_bulk_mail_messages">Der er ingen massemailbeskeder at vise.</msg>
+  <msg key="Message">Besked</msg>
+  <msg key="Message_not_sent_yet">Denne besked er ikke sendt endnu. Du kan &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;annullere&lt;/a&gt; den.</msg>
+  <msg key="No">Nej</msg>
+  <msg key="Pending">Afventer</msg>
+  <msg key="pretty_name">Massemail</msg>
+  <msg key="Query">Forespørgsel</msg>
+  <msg key="Reply_To">Svar til</msg>
+  <msg key="Send_Date">Afsendelsesdato</msg>
+  <msg key="Sent">Afsendt?</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Subject">Emne</msg>
+  <msg key="Yes">Ja</msg>
+</message_catalog>

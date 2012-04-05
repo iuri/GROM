@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ast_ES" charset="ISO-8859-1">
+
+  <msg key="Extra_Headers">Otros encabezamientos</msg>
+  <msg key="From">De</msg>
+  <msg key="lt_No_bulk_mail_messages">Ningún corréu masivu qu'enseñar</msg>
+  <msg key="Message">Mensaxe</msg>
+  <msg key="No">Non</msg>
+  <msg key="pretty_name">Correo Masivu</msg>
+  <msg key="Query">Pitición</msg>
+  <msg key="Reply_To">Contestar a</msg>
+  <msg key="Send_Date">Fecha del Unvíu</msg>
+  <msg key="Sent">Mandáu?</msg>
+  <msg key="Subject">Asuntu</msg>
+  <msg key="Yes">Sí</msg>
+</message_catalog>

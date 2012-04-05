@@ -1,0 +1,1 @@
+alter table organizations add index organizations_client_id_idx on organizations(client_id);

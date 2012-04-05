@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="ko_KR" charset="utf-8">
+
+  <msg key="Extra_Headers">별도의 헤더</msg>
+  <msg key="From">로부터</msg>
+  <msg key="lt_No_bulk_mail_messages">화면표시할 벌크 메일 메시지가 없습니다. </msg>
+  <msg key="Message">메시지</msg>
+  <msg key="No">아니오</msg>
+  <msg key="pretty_name">벌크 메일</msg>
+  <msg key="Query">질의어</msg>
+  <msg key="Reply_To">응답</msg>
+  <msg key="Send_Date">전송 일자</msg>
+  <msg key="Sent">보내시겠습니까?</msg>
+  <msg key="Subject">제목</msg>
+  <msg key="Yes">예</msg>
+</message_catalog>

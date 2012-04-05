@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="pt_PT" charset="ISO-8859-1">
+
+  <msg key="Extra_Headers">Cabeçalhos Extra</msg>
+  <msg key="From">De</msg>
+  <msg key="lt_No_bulk_mail_messages">Não há mensagens de correio em massa para apresentar.</msg>
+  <msg key="Message">Mensagem</msg>
+  <msg key="No">Não</msg>
+  <msg key="pretty_name">Correio em Massa</msg>
+  <msg key="Query">Consulta</msg>
+  <msg key="Reply_To">Responder A</msg>
+  <msg key="Send_Date">Data de Envio</msg>
+  <msg key="Sent">Enviar?</msg>
+  <msg key="Subject">Assunto</msg>
+  <msg key="Yes">Sim</msg>
+</message_catalog>

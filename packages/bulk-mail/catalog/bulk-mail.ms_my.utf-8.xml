@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<message_catalog package_key="bulk-mail" package_version="0.5" locale="ms_my" charset="utf-8">
+
+  <msg key="Extra_Headers">Pengatas Lebihan</msg>
+  <msg key="From">Daripada</msg>
+  <msg key="lt_No_bulk_mail_messages">Tiada mesej mel pukal untuk dipaparkan.</msg>
+  <msg key="Message">Mesej</msg>
+  <msg key="No">Tidak</msg>
+  <msg key="pretty_name">Mel Pukal</msg>
+  <msg key="Query">Pertanyaan</msg>
+  <msg key="Reply_To">Maklumbalas Kepada</msg>
+  <msg key="Send_Date">Tarik Di Hantar</msg>
+  <msg key="Sent">Di Hantar?</msg>
+  <msg key="Subject">Subjek</msg>
+  <msg key="Yes">Ya</msg>
+</message_catalog>

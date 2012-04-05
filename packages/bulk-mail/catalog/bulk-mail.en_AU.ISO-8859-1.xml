@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="bulk-mail" package_version="0.5.1d5" locale="en_AU" charset="ISO-8859-1">
+
+  <msg key="Cancelled">Cancelled</msg>
+  <msg key="Extra_Headers">Extra Headers</msg>
+  <msg key="From">From</msg>
+  <msg key="lt_No_bulk_mail_messages">No bulk mail messages to display.</msg>
+  <msg key="Message">Message</msg>
+  <msg key="Message_not_sent_yet">This message has not been sent yet.  You may &lt;a href=&quot;cancel?bulk_mail_id=%bulk_mail_id%&quot;&gt;cancel&lt;/a&gt; it.</msg>
+  <msg key="No">No</msg>
+  <msg key="Pending">Pending</msg>
+  <msg key="pretty_name">Bulk Mail</msg>
+  <msg key="Query">Query</msg>
+  <msg key="Reply_To">Reply To</msg>
+  <msg key="Send_Date">Send Date</msg>
+  <msg key="Sent">Sent</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Subject">Subject</msg>
+  <msg key="Yes">Yes</msg>
+</message_catalog>

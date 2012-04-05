@@ -1,0 +1,31 @@
+/configure.adp/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/confirm-delete-form.adp/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/index-oracle.xql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/index-postgresql.xql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/index.xql/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/manage-email-privacy.adp/1.2/Tue Oct 19 23:59:43 2010//
+/manage-email-privacy.tcl/1.2/Tue Oct 19 23:59:44 2010//
+/permissions-user-add.adp/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/permissions-user-add.tcl/1.2/Tue Oct 19 20:12:21 2010//
+/permissions.adp/1.1.1.1/Mon Apr 18 21:32:07 2005//
+/permissions.tcl/1.2/Tue Oct 19 20:12:21 2010//
+/subsite-add.adp/1.3/Tue Oct 19 20:12:21 2010//
+/subsite-convert-type.adp/1.1/Tue Oct 19 23:59:44 2010//
+/subsite-convert-type.tcl/1.1/Tue Oct 19 23:59:44 2010//
+D/applications////
+D/attributes////
+D/group-types////
+D/groups////
+D/host-node-map////
+D/object-types////
+D/parties////
+D/rel-segments////
+D/rel-types////
+D/relations////
+D/site-map////
+D/site-nodes////
+D/users////
+/configure.tcl/1.3/Fri Feb 10 19:49:59 2012//
+/index.adp/1.3/Fri Feb 10 18:17:00 2012//
+/index.tcl/1.3/Fri Feb 10 19:49:59 2012//
+/subsite-add.tcl/1.3/Fri Feb 10 18:17:00 2012//
