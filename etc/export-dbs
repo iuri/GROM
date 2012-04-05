@@ -1,0 +1,108 @@
+#!/usr/bin/perl
+# --------------------------------------------------------------
+# export-dbs
+# (c) 2008-2009 ]project-open[
+
+# Licensed under GPL V2.0 or higher
+# Determines the list of databases available and backs up all DBs
+# Author: Frank Bergmann <frank.bergmann@project-open.com>
+# --------------------------------------------------------------
+
+# Constants, variables and parameters
+#
+my $debug = 1;
+my $psql = "/usr/bin/psql";
+my $bzip2 = "/usr/bin/bzip2";
+
+my $exportdir = "/var/backup";
+
+my $logdir = "/var/log/backup";
+my $backup_email = "backup\@fraber.de";
+my $pg_owner = "postgres";
+my $computer_name = `hostname`;
+my $time = `/bin/date +\%Y\%m\%d.\%H\%M`;
+my $weekday = `/bin/date +%w`;
+
+chomp($computer_name);
+chomp($time);
+chomp($weekday);
+
+
+# Get the list of all databases. psql -l returns lines such as:
+#  projop       | projop       | UNICODE
+#
+open(DBS, "su - $pg_owner -c '$psql -l' |");
+while (my $db_line=<DBS>) {
+
+	chomp($db_line);
+	$db_line =~ /^\s*(\w*)/;
+        my $db_name = $1;
+
+	next if (length($db_name) < 2);
+	next if ($db_name =~ /^\s$/);
+	next if ($db_name =~ /^List$/);
+	next if ($db_name =~ /^Name$/);
+	next if ($db_name =~ /^template0$/);
+	next if ($db_name =~ /^template1$/);
+	next if ($db_name =~ /^postgres$/);
+
+	print "export-dbs: Exporting '$db_name'\n" if $debug;
+
+	my $file = "$exportdir/pgback.$computer_name.$db_name.$time.sql";
+	my $log_file = "$logdir/export-dbs.$db_name.$time.log";
+	my $cmd = "su - $pg_owner --command='/usr/bin/pg_dump $db_name -c -O -F p -f $file'";
+	print "export-dbs: $cmd\n" if ($debug);
+	system $cmd;
+
+	my $cmd2 = "su - $pg_owner --command='$bzip2 $file'";
+	print "export-dbs: $cmd2\n" if ($debug);
+	system $cmd2;
+
+#	my $cmd3 = "pgp -e $file.bz2 $backup_email";
+#	print "export-dbs: $cmd3\n" if ($debug);
+#	system $cmd3;
+
+#	my $cmd4 = "chown $db_name:$db_name $file.bz2.pgp";
+#	print "export-dbs: $cmd4\n" if ($debug);
+#	system $cmd4;
+
+#	my $cmd5 = "chmod ugo+r $file.bz2.pgp";
+#	print "export-dbs: $cmd5\n" if ($debug);
+#	system $cmd5;
+
+#	my $cmd6 = "uuencode $file.bz2.pgp $file.bz2.pgp | mail -s pgback.$computer_name.$db_name.$time $backup_email";
+#	print "export-dbs: $cmd6\n" if ($debug);
+#	system $cmd6;
+
+
+	if ($db_name =~ /harbinger/) { 
+	    my $cmd6 = "uuencode $file.bz2 $file.bz2 | mail -s pgback.$computer_name.$db_name.$time sysadmin\@harbinger.com.au";
+	    print "export-dbs: $cmd6\n" if ($debug);
+	    system $cmd6;
+
+	    # my $cmd6 = "uuencode $file.bz2 $file.bz2 | mail -s pgback.$computer_name.$db_name.$time support\@project-open.com";
+	    # print "export-dbs: $cmd6\n" if ($debug);
+	    # system $cmd6;
+	}
+
+        if ($db_name =~ /isite/ and $weekday==6) {
+            my $cmd6 = "uuencode $file.bz2 $file.bz2 | mail -s pgback.$computer_name.$db_name.$time sysadmin\@isite-solutions.com";
+            print "export-dbs: $cmd6\n" if ($debug);
+            system $cmd6;
+
+            # my $cmd6 = "uuencode $file.bz2 $file.bz2 | mail -s pgback.$computer_name.$db_name.$time support\@project-open.com";
+            # print "export-dbs: $cmd6\n" if ($debug);
+            # system $cmd6;
+        }
+
+
+	# Tar the entire web server to backup area, except for packages and filestorage backup.
+	my $file9 = "$exportdir/webback.$computer_name.$db_name.$time.tgz";
+	my $cmd9 = "tar --exclude='/web/$db_name/log' --exclude='/web/$db_name/packages' --exclude='/web/$db_name/filestorage/backup' --exclude='/web/$db_name/bin' --exclude='/web/$db_name/tcl' -c -z -f $file9 /web/$db_name/";
+	print "export-dbs: $cmd9\n" if ($debug);
+	system $cmd9;
+
+
+}
+close(DBS);
+
