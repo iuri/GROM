@@ -7,6 +7,23 @@ SELECT acs_log__debug('/packages/intranet-confdb/sql/postgresql/upgrade/upgrade-
 -- Full-Text Search for Conf Items
 -----------------------------------------------------------
 
+-- create table im_search_object_types (
+--        object_type_id  integer
+--                        constraint im_search_object_types_pk
+--                        primary key,
+--        object_type     varchar(100)
+--                        constraint im_search_objects_object_type_fk
+--                        references acs_object_types
+--                        on delete cascade,
+--                        -- Relative weight of the object type.
+                        -- Highly relevant types with few objectys
+                        -- (companies, users) should get a very high
+                        -- weight (max. 10), while files should have
+                        -- low weights (min. 0.1)
+--        rel_weight      numeric(5,2) default 1
+--);
+
+
 
 create or replace function inline_0 ()
 returns integer as '

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="pt_BR" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="pt_BR" charset="ISO-8859-1">
 
   <msg key="1111">1111</msg>
   <msg key="_EUR_100k">EUR 100k</msg>
@@ -796,6 +796,7 @@
   <msg key="Macedonia">Macedonia</msg>
   <msg key="Main_Project">Projeto Principal</msg>
   <msg key="Marketing">Marketing</msg>
+  <msg key="Materials">Materiais</msg>
   <msg key="Members">Membros</msg>
   <msg key="mk">mk</msg>
   <msg key="mo">mo</msg>
@@ -811,12 +812,16 @@
   <msg key="Order_1">Pedido</msg>
   <msg key="Organization_1">Organização</msg>
   <msg key="Package">Pacote</msg>
+  <msg key="Parameters">Parâmetros
+</msg>
   <msg key="pl">pl</msg>
   <msg key="Program_Enhancement">Programa de Melhorias</msg>
   <msg key="Project_Ch">Projeto</msg>
   <msg key="Project_Management">Gerência de Projetos</msg>
   <msg key="Project_Task">Tarefa do Projeto</msg>
+  <msg key="Projects">Projetos</msg>
   <msg key="Projects_Admin">Administrador de Projetos</msg>
+  <msg key="Provider_Management">Gerência de Fornecedores</msg>
   <msg key="Purchasing_Request">Solicitação de Compra</msg>
   <msg key="Random_Portrait">Foto aleatória</msg>
   <msg key="Red">Vermelho</msg>
@@ -865,6 +870,7 @@
   <msg key="Update_User">Atualizar Usuário</msg>
   <msg key="Upload_Preview_Image">Carregar pré-visualização de Imagem</msg>
   <msg key="Uruguay">Uruguai</msg>
+  <msg key="Users">Usuários</msg>
   <msg key="VAS">VAS  </msg>
   <msg key="VAS_5051">VAS 5051  </msg>
   <msg key="Venezuela">Venezuela</msg>

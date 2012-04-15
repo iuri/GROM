@@ -1,7 +1,7 @@
 -- Drop the ACS Reference Country data
 --
 -- @author jon@jongriffin.com
--- @cvs-id $Id: ref-countries-drop.sql,v 1.2 2010/10/23 12:51:44 po34demo Exp $
+-- @cvs-id $Id: ref-countries-drop.sql,v 1.1 2001/09/15 00:49:28 donb Exp $
 
 -- drop all associated tables and packages
 -- I am not sure this is a good idea since we have no way to register

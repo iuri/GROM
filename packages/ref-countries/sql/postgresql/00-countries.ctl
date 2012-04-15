@@ -1,1 +1,1 @@
-\copy countries from '[acs_root_dir]/packages/ref-countries/sql/common/countries.dat' delimiter ';' null as ''
+\copy countries from '/var/www/projop/packages/ref-countries/sql/common/countries.dat' delimiter ';' null as ''

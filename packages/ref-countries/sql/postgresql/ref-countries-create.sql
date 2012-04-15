@@ -2,7 +2,7 @@
 --
 -- @author jon@jongriffin.com.com
 -- @creation-date 2001-08-27
--- @cvs-id $Id: ref-countries-create.sql,v 1.3 2010/10/23 12:54:38 po34demo Exp $
+-- @cvs-id $Id: ref-countries-create.sql,v 1.3.2.1 2010/05/15 16:38:20 donb Exp $
 
 -- country is taken from ISO 3166
 
@@ -31,11 +31,8 @@ comment on column countries.default_name is '
 See country.sql for more comments.
 ';
 
-
--- Make sure the reference did not exist before
-delete from acs_reference_repositories where table_name = 'COUNTRIES';
-
 -- add this table into the reference repository
+
 select acs_reference__new (
         'COUNTRIES', -- table_name
         '2000-08-21',
