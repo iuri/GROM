@@ -25,7 +25,6 @@
 </tr>
 <tr>
   <td colspan=3>
-    <%= [im_component_bay bottom] %>
   </td>
 </tr>
 </table>
