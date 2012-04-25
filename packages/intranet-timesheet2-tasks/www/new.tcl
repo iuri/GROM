@@ -22,13 +22,6 @@ ad_page_contract {
 # Default & Security
 # ------------------------------------------------------------------
 
-if {[info exists task_id]} {
-    callback im_timesheet_task_new_redirect -object_id [ad_conn object_id] -status_id "" -type_id "" -task_id $task_id -project_id $project_id \
-	-edit_p $edit_p -message $message -form_mode $form_mode -task_status_id $task_status_id  -return_url $return_url
-} else {
-    callback im_timesheet_task_new_redirect -object_id [ad_conn object_id] -status_id "" -type_id "" -task_id "" -project_id $project_id -edit_p $edit_p \
-	-message $message -form_mode $form_mode -task_status_id $task_status_id  -return_url $return_url
-}
 
 
 set user_id [ad_maybe_redirect_for_registration]
@@ -66,7 +59,6 @@ if {[info exists task_id]} {
 
 
 }
-
 
 
 # Check the case if there is no project specified. 
@@ -294,6 +286,8 @@ set task_type_id [im_project_type_task]
 
 ad_form -extend -name task -on_request {
 
+
+
     # Populate elements from local variables
     # ToDo: Check if these queries get too slow if the
     # system is in use during a lot of time...
@@ -316,9 +310,9 @@ ad_form -extend -name task -on_request {
 
     # Set default Material to most used Material
     set material_id $default_material_id
+} -edit_request {
 
-} -select_query {
-
+    db_1row select_task {
 	select t.*,
 	        p.parent_id as project_id,
 	        p.project_name as task_name,
@@ -337,6 +331,11 @@ ad_form -extend -name task -on_request {
 	where
 	        t.task_id = :task_id and
 		p.project_id = :task_id
+    }
+
+    set start_date_sql [template::util::date get_property sql_date $start_date]
+    set end_date_sql [template::util::date get_property sql_timestamp $end_date]
+
 
 } -new_data {
 
