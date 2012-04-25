@@ -37,14 +37,6 @@ ad_page_contract {
 }
 
 
-# Redirect to custom new page if necessary
-callback im_project_new_redirect -object_id $project_id \
-    -status_id $project_status_id -type_id $project_type_id \
-    -project_id $project_id -parent_id $parent_id \
-    -company_id $company_id -project_type_id $project_type_id \
-    -project_name $project_name -project_nr [im_opt_val project_nr] \
-    -workflow_key $workflow_key -return_url $return_url
-
 
 # -----------------------------------------------------------
 # Defaults
