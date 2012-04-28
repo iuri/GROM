@@ -1,6 +1,7 @@
 ad_library {
 
     @author Iuri Sampaio (iuri.sampaio@iurix.com)
+    @creation-date 2012-04-15
 }
 
 
@@ -11,27 +12,54 @@ ad_proc -private grom::package_install {} {
     Install callback for GROM package
 
 } {
+
     
+    set attribute_id [im_dynfield::attribute::add \
+			  -object_type "im_timesheet_task" \
+			  -widget_name "checkbox" \
+			  -attribute_name "billable_task_p" \
+			  -pretty_name "Billable Task" \
+			  -pretty_plural "Billable Task" \
+			  -table_name "im_timesheet_tasks" \
+			  -required_p "f" \
+			  -modify_sql_p "t" \
+			  -include_in_search_p "f" \
+			  -also_hard_coded_p "f" \
+			  -datatype "boolean" \
+			  -label_style "plain" \
+			  -pos_y 9 \
+			  -help_text "Mark this field to activate billing task on OPenBravo" \
+			  -section_heading "" \
+			 ]
 
-		# --------------------------------------------------------
-		### Create profiles ###
-		# --------------------------------------------------------
-		im_exec_dml new_profile "im_create_profile('Técnico', 'profile')"
-		set tecnico_profile_id [db_string select_tecnico_profile_id {} -default null]
 
-		im_exec_dml new_profile "im_create_profile('Comercial', 'profile')"
-		set comercial_profile_id [db_string select_tecnico_profile_id {} -default null]
 
-		im_exec_dml new_profile "im_create_profile('Administrativo', 'profile')"
-		set administrativo_profile_id [db_string select_administrativo_profile_id {} -default null]
 
-		im_exec_dml new_profile "im_create_profile('GROM Lab', 'profile')"
-		set gromlab_profile_id [db_string select_gromlab_profile_id {} -default null]
+    # --------------------------------------------------------
+    ### Create profiles ###
+    # --------------------------------------------------------
 
-		im_exec_dml new_profile "im_create_profile('Diretoria', 'profile')"
-		set diretoria_profile_id [db_string select_diretoria_profile_id {} -default null]
+    # Employees
+    im_exec_dml new_profile "im_create_profile('Técnico', 'profile')"
+    set tecnico_profile_id [db_string select_tecnico_profile_id {} -default null]
+    
+    # SAles
+    im_exec_dml new_profile "im_create_profile('Comercial', 'profile')"
+    set comercial_profile_id [db_string select_tecnico_profile_id {} -default null]
+    
+    # Admnistrativo **
+    im_exec_dml new_profile "im_create_profile('Administrativo', 'profile')"
+    set administrativo_profile_id [db_string select_administrativo_profile_id {} -default null]
+    
+    # GROM LAB **
+    im_exec_dml new_profile "im_create_profile('GROM Lab', 'profile')"
+    set gromlab_profile_id [db_string select_gromlab_profile_id {} -default null]
+    
+# Senior Managers
+    im_exec_dml new_profile "im_create_profile('Diretoria', 'profile')"
+    set diretoria_profile_id [db_string select_diretoria_profile_id {} -default null]
 
-		
+    
 		# Set permissions
 		# It needs to describe what privileges/permissions goes to each profile
 		
@@ -366,10 +394,8 @@ ad_proc -private grom::after_upgrade {
 	-from_version_name $from_version_name \
 	-to_version_name $to_version_name \
 	-spec {
-	    0.1d 0.1d1 {
+	    0.1d1 0.1d2 {
 
-		
-		
 		
 	    }
 	} 

@@ -103,8 +103,7 @@ set html [im_resource_mgmt_resource_planning \
 	-max_col $max_col \
 	-max_row $max_row \
 	-show_all_employees_p $show_all_employees_p \
-	-excluded_group_ids ""
-]
+	-excluded_group_ids ""]
 
 if {"" == $html} { 
     set html [lang::message::lookup "" intrant-ganttproject.No_resource_assignments_found "No resource assignments found"]

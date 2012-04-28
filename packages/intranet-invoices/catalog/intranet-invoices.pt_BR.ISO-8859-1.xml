@@ -58,6 +58,10 @@
   <msg key="intranet-invoices.Error_multiple_currencies">Erro de Moedas Múltiplas</msg>
   <msg key="Line">Linha</msg>
   <msg key="lt_Cant_find_the_documen">Impossível localizar o documento de nº %invoice_id%</msg>
+  <msg key="lt_Dear_accounting_conta">Caro(a) %accounting_contact_name%, Um novo %cost_type% foi criado para você em: %system_url%/intranet-invoices/view?invoice_id=%invoice_id%
+O novo documento está relacionado ao(s) projeto(s): %select_projects;noquote%
+Favor visitar o link acima e imprimir o documento para sua referência. 
+Saudações, %current_user_name%</msg>
   <msg key="lt_Generate_Invoice_from">Gerar Fatura para Quota</msg>
   <msg key="lt_Generate_Provider_Bil">Gerar Fatura de Fornecedor da Ordem de Compra</msg>
   <msg key="lt_Insufficient_Privileg">Privilégios Insuficientes</msg>

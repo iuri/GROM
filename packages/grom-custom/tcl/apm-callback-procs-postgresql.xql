@@ -12,37 +12,37 @@
     <version>8.4</version>
   </rdbms>
   
-  <fullquery name="apm_callback_procs.select_tecnico_profile_id">
+  <fullquery name="grom::package_install.select_tecnico_profile_id">
     <querytext>
 	SELECT aux_int1 FROM im_categories WHERE category = 'Técnico'
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.select_comercial_profile_id">
+  <fullquery name="grom::package_install.select_comercial_profile_id">
     <querytext>
 	SELECT aux_int1 FROM im_categories WHERE category = 'Comercial'
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.select_administrativo_profile_id">
+  <fullquery name="grom::package_install.select_administrativo_profile_id">
     <querytext>	
     	SELECT aux_int1 FROM im_categories WHERE category = 'Administrativo'
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.select_gromlab_profile_id">
+  <fullquery name="grom::package_install.select_gromlab_profile_id">
     <querytext>
 	SELECT aux_int1 FROM im_categories WHERE category = 'Grom Lab'
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.select_diretoria_profile_id">
+  <fullquery name="grom::package_install.select_diretoria_profile_id">
     <querytext>
         SELECT aux_int1 category_id FROM im_categories WHERE category = 'Diretoria'
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.update_creation_user_id">
+  <fullquery name="grom::package_install.update_creation_user_id">
     <querytext>
 
       UPDATE acs_objects SET creation_user = :current_user_id WHERE object_id = :user_id
@@ -50,13 +50,13 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.add_users_contact">
+  <fullquery name="grom::package_install.add_users_contact">
     <querytext>
       INSERT INTO users_contact (user_id) VALUES (:user_id)
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.member_of_reg_users">
+  <fullquery name="grom::package_install.member_of_reg_users">
     <querytext>
       SELECT count(*)
       FROM group_member_map m, membership_rels mr
@@ -68,7 +68,7 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.update_offices">
+  <fullquery name="grom::package_install.update_offices">
     <querytext>
       UPDATE im_offices SET
       office_name     = :office_name,
@@ -83,7 +83,7 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="apm_callback_procs.update_company">
+  <fullquery name="grom::package_install.update_company">
     <querytext>
       
       UPDATE im_companies SET
