@@ -654,18 +654,17 @@ ad_proc -public im_sub_categories {
     if {$include_disabled_p} { set enabled_check "" }
 
     set closure_sql "
-	select	category_id
-	from	im_categories c
-	where	c.category_id in ([join $category_list ","])
-		$enabled_check
-      UNION
-	select	h.child_id
-	from	im_categories c,
-		im_category_hierarchy h
-	where	h.parent_id in ([join $category_list ","])
-		and h.child_id = c.category_id
-		$enabled_check
+	WITH RECURSIVE children AS ( 
+				    SELECT ch.child_id FROM im_category_hierarchy ch WHERE ch.parent_id IN ([join $category_list ","]) 
+				    UNION ALL 
+				    SELECT ch2.child_id FROM im_category_hierarchy ch2 JOIN children ON (ch2.parent_id = children.child_id) 
+				   ) 
+	SELECT c.category_id FROM im_categories c 
+	WHERE (c.category_id IN ([join $category_list ","]) OR c.category_id IN (SELECT child_id FROM children) ) 
+	$enabled_check;
+
     "
+
 
     set result [db_list category_trans_closure $closure_sql]
 
