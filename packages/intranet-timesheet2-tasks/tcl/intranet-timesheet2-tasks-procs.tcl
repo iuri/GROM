@@ -168,7 +168,8 @@ ad_proc -public im_timesheet_task_list_component {
 } {
     Creates a HTML table showing a table of Tasks 
 } {
-    # ---------------------- Security - Show the comp? -------------------------------
+    ns_log Notice "Running im_timesheet_task_list_component"
+   # ---------------------- Security - Show the comp? -------------------------------
     set user_id [ad_get_user_id]
     set user_is_admin_p [im_is_user_site_wide_or_intranet_admin $user_id]
 
