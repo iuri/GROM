@@ -719,11 +719,16 @@ db_foreach projects_info_query $selection -bind $form_vars {
     } else {
 	set url_string "<a href=\"$url\">$url</a>"
     }
+    
+   
+    set project_type [lang::message::lookup "" intranet-core.[lang::util::suggest_key $project_type] $project_type]
+    set project_status [lang::message::lookup "" intranet-core.[lang::util::suggest_key $project_status] $project_status]
 
     # Append together a line of data based on the "column_vars" parameter list
     set row_html "<tr$bgcolor([expr $ctr % 2])>\n"
     foreach column_var $column_vars {
 	append row_html "\t<td valign=top>"
+
 	set cmd "append row_html $column_var"
 	eval "$cmd"
 	append row_html "</td>\n"
