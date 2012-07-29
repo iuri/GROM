@@ -9,14 +9,14 @@
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>f</inherit-templates-p>
     
-    <version name="0.1d3" url="http://openacs.org/repository/download/apm/grom-custom-0.1d3.apm">
+    <version name="0.1d4" url="http://openacs.org/repository/download/apm/grom-custom-0.1d4.apm">
         <owner url="mailto:iuri.sampaio@iurix.com">Iuri Sampaio</owner>
         <summary>]PO[ Customizations for Grom company</summary>
         <release-date>2012-04-14</release-date>
         <description format="text/html">]PO[ Customizations for Grom company</description>
         <maturity>0</maturity>
 
-        <provides url="grom-custom" version="0.1d3"/>
+        <provides url="grom-custom" version="0.1d4"/>
 
         <callbacks>
 	  <callback type="after-install" proc="grom::package_install" />
