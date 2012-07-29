@@ -33,6 +33,8 @@ ad_proc -public grom::im_timesheet_task_list_component {
     Creates a HTML table showing a table of Tasks 
 } {
     ns_log Notice "Running im_timesheet_task_list_component"
+    ns_log Notice "RESTRICT $restrict_to_project_id"
+
    # ---------------------- Security - Show the comp? -------------------------------
     set user_id [ad_get_user_id]
     set user_is_admin_p [im_is_user_site_wide_or_intranet_admin $user_id]
@@ -621,6 +623,7 @@ ad_proc -public grom::im_timesheet_task_list_component {
     # -------------------------------------------------
     # Format the action bar at the bottom of the table
     #
+    set project_id $restrict_to_project_id
     set action_html "
 	<td align=left>
 		<select name=action>
