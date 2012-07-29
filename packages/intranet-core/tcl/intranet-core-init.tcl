@@ -288,7 +288,7 @@ ad_proc -public -callback im_project_new_redirect {
 
 ad_proc -public -callback im_timesheet_task_new_redirect {
     {-object_id:required}
-4    {-status_id ""}
+    {-status_id ""}
     {-type_id ""}
     {-task_id ""}
     {-project_id:required}
