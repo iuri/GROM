@@ -37,7 +37,6 @@ ad_page_contract {
 }
 
 
-
 # -----------------------------------------------------------
 # Defaults
 # -----------------------------------------------------------
@@ -51,7 +50,8 @@ set org_project_type_id [im_opt_val project_type_id]
 
 set project_nr_field_size [ad_parameter -package_id [im_package_core_id] ProjectNumberFieldSize "" 20]
 set project_nr_field_editable_p [ad_parameter -package_id [im_package_core_id] ProjectNumberFieldEditableP "" 1]
-set enable_nested_projects_p [parameter::get -parameter EnableNestedProjectsP -package_id [ad_acs_kernel_id] -default 1] 
+#set enable_nested_projects_p [parameter::get -parameter EnableNestedProjectsP -package_id [ad_acs_kernel_id] -default 1] 
+set enable_nested_projects_p [parameter::get -parameter EnableNestedProjectsP -package_id [ad_conn package_id] -default 0] 
 set enable_project_path_p [parameter::get -parameter EnableProjectPathP -package_id [im_package_core_id] -default 0]
 set enable_absolute_project_path_p [parameter::get -parameter EnableAbsoluteProjectPathP -package_id [im_package_core_id] -default 0] 
 
@@ -134,6 +134,7 @@ if {$project_exists_p} {
           ]
           ad_returnredirect [export_vars -base "/intranet/biz-object-type-select" {
               project_name
+	      parent_id
               also_add_users
               company_id
               { return_url $current_url }
@@ -191,6 +192,8 @@ if {$enable_project_path_p} {
 	-after_html "[im_gif help "An optional full path to the project filestorage"]"
 }
 
+
+ns_log Notice "PARENT $parent_id | $enable_nested_projects_p"
 if {$enable_nested_projects_p} {
 	
     # Create project list query.
@@ -207,9 +210,14 @@ if {$enable_nested_projects_p} {
         set project_parent_options [im_project_options -exclude_subprojects_p 0 -exclude_status_id [im_project_status_closed] -project_id $super_project_id]
     }
 
+    set project_parent_options [db_list_of_lists select_parent {
+	SELECT project_name, project_id FROM im_projects WHERE project_id = :parent_id
+    }]
+
     template::element::create $form_id parent_id -optional \
     	-label "[_ intranet-core.Parent_Project]" \
         -widget "select" \
+	-mode "display" \
 	-options $project_parent_options \
 	-after_html "[im_gif help "Do you want to create a subproject (a project that is part of an other project)? Leave the field blank (-- Please Select --) if you are unsure."]"
 } else {
@@ -227,6 +235,7 @@ if {$user_admin_p} {
 template::element::create $form_id company_id \
     -label "[_ intranet-core.Customer]" \
     -widget "select" \
+    -mode "display" \
     -options $customer_list_options \
     -after_html $help_text
 
