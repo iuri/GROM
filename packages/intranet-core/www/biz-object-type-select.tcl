@@ -39,6 +39,7 @@ ad_page_contract {
     type_id_var
     return_url
     project_id:optional
+    parent_id:optional
     user_id_from_search:optional
     { pass_through_variables "" }
     { exclude_category_ids {} }
@@ -46,6 +47,7 @@ ad_page_contract {
     { package_key "intranet-core" }
     { default_category_id 0}
 }
+
 
 # --------------------------------------------------------------
 #
@@ -98,6 +100,9 @@ foreach var $pass_through_variables {
    "
 }
 
+   append pass_through_html "
+	<input type=hidden name=\"parent_id\" value=\"$parent_id\">
+   "
 
 
 # Read the categories into the a hash cache
