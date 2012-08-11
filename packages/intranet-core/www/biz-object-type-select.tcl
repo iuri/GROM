@@ -100,10 +100,11 @@ foreach var $pass_through_variables {
    "
 }
 
+if {[info exists parent_id]} {
    append pass_through_html "
 	<input type=hidden name=\"parent_id\" value=\"$parent_id\">
    "
-
+}
 
 # Read the categories into the a hash cache
 # Initialize parent and level to "0"
