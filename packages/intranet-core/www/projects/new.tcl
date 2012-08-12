@@ -193,7 +193,6 @@ if {$enable_project_path_p} {
 }
 
 
-ns_log Notice "PARENT $parent_id | $enable_nested_projects_p"
 if {$enable_nested_projects_p} {
 	
     # Create project list query.
@@ -210,14 +209,10 @@ if {$enable_nested_projects_p} {
         set project_parent_options [im_project_options -exclude_subprojects_p 0 -exclude_status_id [im_project_status_closed] -project_id $super_project_id]
     }
 
-    set project_parent_options [db_list_of_lists select_parent {
-	SELECT project_name, project_id FROM im_projects WHERE project_id = :parent_id
-    }]
 
     template::element::create $form_id parent_id -optional \
     	-label "[_ intranet-core.Parent_Project]" \
         -widget "select" \
-	-mode "display" \
 	-options $project_parent_options \
 	-after_html "[im_gif help "Do you want to create a subproject (a project that is part of an other project)? Leave the field blank (-- Please Select --) if you are unsure."]"
 } else {
@@ -235,7 +230,6 @@ if {$user_admin_p} {
 template::element::create $form_id company_id \
     -label "[_ intranet-core.Customer]" \
     -widget "select" \
-    -mode "display" \
     -options $customer_list_options \
     -after_html $help_text
 
