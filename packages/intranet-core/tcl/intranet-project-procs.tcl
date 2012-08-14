@@ -49,7 +49,7 @@ ad_proc -public im_project_type_bt_task { } { return 4305 }
 
 ad_proc -public im_project_status_potential {} { return 71 }
 ad_proc -public im_project_status_quoting {} { return 74 }
-ad_proc -public im_project_status_open {} { return 76 }
+ad_proc -public im_project_status_open {} { return "76 10000006 10000007" }
 ad_proc -public im_project_status_declined {} { return 77 }
 ad_proc -public im_project_status_delivered {} { return 78 }
 ad_proc -public im_project_status_invoiced {} { return 79 }
