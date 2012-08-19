@@ -1044,159 +1044,162 @@ ad_proc -public im_resource_mgmt_resource_planning {
 		# In case no workday is found, we assign all planned hours to the next workday
 
 		if { "0" == $no_workdays } {
-			if { $start_date != $end_date && $start_date ne ""} {
-				# Find next workday - should be no longer than 2 days from start_date
-
-				# set next_julian_end_date [db_string get_next_julian_end_date "select to_char( to_date('[expr $end_date_julian_planned_hours + 2]','J'), 'YYYY-MM-DD') from dual" -default 0]
-			    	set next_julian_end_date [im_date_julian_to_ansi [expr $end_date_julian_planned_hours + 2]] 				
-
-				set next_workday [db_string get_next_workday "select * from im_absences_working_days_period_weekend_only('$start_date', '$next_julian_end_date') as series_days (days date) limit 1" -default 0]
-				# set days_julian-startdate-ne-end-date [db_string get_days_julian "select to_char( to_date('next_workday','J'), 'YYYY-MM-DD') from dual" -default 0]
-				set days_julian-startdate-ne-end-date [im_date_julian_to_ansi "$next_workday"]   
-			} else { 
-				ns_log NOTICE "Found start_date=end_date: $project_id,$user_id<br>"				
-                                set days_julian [dt_ansi_to_julian_single_arg "$start_date"]
-			}
-
-                        set user_ctr 0
-                        foreach user_id $user_list {
-                                # set user_id [lindex [lindex $user_percentage_list $user_ctr] 0]
-                                # set user_percentage [lindex [lindex $user_percentage_list $user_ctr] 1]
-
-				# Sanity check: Percentage assignment required
-			        # if { "" == user_percentage || ![info exists user_percentage] } {
-				#	ad_return_complaint 1 "No assignment found for user_id: 
-				#		<a href='/intranet/users/view?user_id=$user_id'>[im_name_from_user_id $user_id]</a> 
-				#		on project task:<a href='/intranet/projects/view?project_id=$project_id'>$project_id</a>
-				#	"
-				#} 
-
-				if { [info exists user_day_task_arr($user_id-$next_workday_julian-$project_id)] } {
-					set user_day_task_arr($user_id-$days_julian-$project_id) [expr [expr $planned_units.0 / $number_of_users_on_task] + $user_day_task_arr($user_id-$days_julian-$project_id)]
-				} else {
-					set user_day_task_arr($user_id-$days_julian-$project_id) [expr $planned_units.0 * $user_percentage/100]
-				}
-				
-				# get the superproject
-				set super_project_id $project_id
-				set loop 1
-				set ctr 0
-				while {$loop} {
-				    set loop 0
-				    if {[exists_and_not_null parent_hash($super_project_id)]} {
-					set parent_id $parent_hash($super_project_id)
-				    } else {
-					set parent_id ""
-				    } 
-				    if {$parent_id != ""} {
-					set super_project_id $parent_id
-					set loop 1
-				    }
-				    
-				    # Check for recursive loop
-				    if {$ctr > 20} {
-					set loop 0
-				    }
-				    incr ctr
-				}
-				if { [info exists user_day_task_arr($user_id-$next_workday_julian-$super_project_id)] } {
-					set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr [expr $planned_units.0 / $number_of_users_on_task] + $user_day_task_arr($user_id-$days_julian-$super_project_id)]
-				} else {
-					set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr $planned_units.0 * $user_percentage/100]
-				}
-
-				# Set USER totals
-				if { [info exists user_day_total_plannedhours_arr($user_id-$days_julian)] } {
-				    set user_day_total_plannedhours_arr($user_id-$days_julian) [expr $user_day_task_arr($user_id-$days_julian-$project_id) + $user_day_total_plannedhours_arr($user_id-$days_julian)]
-				} else {
-	   			    set user_day_total_plannedhours_arr($user_id-$days_julian) $user_day_task_arr($user_id-$days_julian-$project_id)
-				}	
-				incr user_ctr
-                        }
-		} else {
-			# Distribute hours over workdays 
-		    	if { [string first "." $planned_units] == -1 } { set planned_units $planned_units.0 }  
-		    	if { [string first "." $no_workdays] == -1 } { set no_workdays $no_workdays.0 }  
-			set hours_per_day [expr $planned_units / $no_workdays / $number_of_users_on_task ]
+		    if { $start_date != $end_date && $start_date ne ""} {
+			# Find next workday - should be no longer than 2 days from start_date
 			
-			set workdays [util_memoize [list im_absence_working_days_weekend_only -start_date "$start_date" -end_date "$end_date"]]
-			set no_users [llength $workdays]
-#			set workdays [util_memoize [list db_list get_work_days "select * from im_absences_working_days_period_weekend_only('$start_date', '$end_date') as series_days (days date)"]]
+			#set next_julian_end_date [db_string get_next_julian_end_date "select to_char( to_date('[expr $end_date_julian_planned_hours + 2]','J'), 'YYYY-MM-DD') from dual" -default 0]
+			set next_julian_end_date [im_date_julian_to_ansi [expr $end_date_julian_planned_hours + 2]] 				
+			
+			set next_workday [db_string get_next_workday "select * from im_absences_working_days_period_weekend_only('$start_date', '$next_julian_end_date') as series_days (days date) limit 1" -default 0]
+			# set days_julian-startdate-ne-end-date [db_string get_days_julian "select to_char( to_date('$next_workday','J'), 'YYYY-MM-DD') from dual" -default 0]
+#			set days_julian-startdate-ne-end-date [im_date_julian_to_ansi "$next_workday"]   
+			set days_julian-startdate-ne-end-date [dt_ansi_to_julian_single_arg $next_workday]
 
-#			set no_users [util_memoize [list db_string get_number_users "select count(*) from im_absences_working_days_period_weekend_only('$start_date', '$end_date') as series_days (days date)" -default 1]]
 
-			foreach days $workdays {		
-			    set days_julian [dt_ansi_to_julian_single_arg "$days"]
-			    set user_ctr 0
-			    foreach user_id $user_percentage_list {
-				set user_id [lindex [lindex $user_percentage_list $user_ctr] 0]
-				set user_percentage [lindex [lindex $user_percentage_list $user_ctr] 1]
-				# Sanity check: Percentage assignment required
-				if { "" == $user_percentage || ![info exists user_percentage] } {
-				    set user_percentage [expr 100 / $no_users]
-				    # ad_return_complaint 1 "</br></br>No assignment found for user:
-				    #            <a href='/intranet/users/view?user_id=$user_id'>[im_name_from_user_id $user_id]</a>
-				    #	        on project task:<a href='/intranet/projects/view?project_id=$project_id'>$project_id</a>.<br>
-				    #		Please <a href='/intranet/projects/view?project_id=$project_id'>assign a occupation</a> for each task and try again</a>. 
-				    #		</br></br>
-				    # "
-                	                }
-				
-				# set user_day_task_arr($user_id-$days_julian-$project_id) [expr $hours_per_day * $user_percentage/100]
-				set user_day_task_arr($user_id-$days_julian-$project_id) $hours_per_day 
-
-				# get the superproject
-				set super_project_id $project_id
+		    } else { 
+			ns_log NOTICE "Found start_date=end_date: $project_id,$user_id<br>"				
+			set days_julian [dt_ansi_to_julian_single_arg "$start_date"]
+		    }
+		    
+		    set user_ctr 0
+		    foreach user_id $user_list {
+			# set user_id [lindex [lindex $user_percentage_list $user_ctr] 0]
+			# set user_percentage [lindex [lindex $user_percentage_list $user_ctr] 1]
+			
+			# Sanity check: Percentage assignment required
+			# if { "" == user_percentage || ![info exists user_percentage] } {
+			#	ad_return_complaint 1 "No assignment found for user_id: 
+			#		<a href='/intranet/users/view?user_id=$user_id'>[im_name_from_user_id $user_id]</a> 
+			#		on project task:<a href='/intranet/projects/view?project_id=$project_id'>$project_id</a>
+			#	"
+			#} 
+			
+			if { [info exists user_day_task_arr($user_id-$next_workday_julian-$project_id)] } {
+			    set user_day_task_arr($user_id-$days_julian-$project_id) [expr [expr $planned_units.0 / $number_of_users_on_task] + $user_day_task_arr($user_id-$days_julian-$project_id)]
+			} else {
+			    set user_day_task_arr($user_id-$days_julian-$project_id) [expr $planned_units.0 * $user_percentage/100]
+			}
+			
+			# get the superproject
+			set super_project_id $project_id
+			set loop 1
+			set ctr 0
+			while {$loop} {
+			    set loop 0
+			    if {[exists_and_not_null parent_hash($super_project_id)]} {
+				set parent_id $parent_hash($super_project_id)
+			    } else {
+				set parent_id ""
+			    } 
+			    if {$parent_id != ""} {
+				set super_project_id $parent_id
 				set loop 1
-				set ctr 0
-				while {$loop} {
-				    set loop 0
-				    if {[exists_and_not_null parent_hash($super_project_id)]} {
-					set parent_id $parent_hash($super_project_id)
-				    } else {
-					set parent_id ""
-				    } 
-				    if {$parent_id != ""} {
-					set super_project_id $parent_id
-					set loop 1
-				    }
-				    
-				    # Check for recursive loop
-				    if {$ctr > 20} {
-					set loop 0
-				    }
-				    incr ctr
-				}
-				if { [info exists user_day_task_arr($user_id-$days_julian-$super_project_id)] } {
-				    set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr $hours_per_day + $user_day_task_arr($user_id-$days_julian-$super_project_id)]
-				} else {
-				    set user_day_task_arr($user_id-$days_julian-$super_project_id) $hours_per_day
-				}
-				# Set USER totals
-				if { [info exists user_day_total_plannedhours_arr($user_id-$days_julian)] } {
-				    set user_day_total_plannedhours_arr($user_id-$days_julian) [expr $user_day_task_arr($user_id-$days_julian-$project_id) + $user_day_total_plannedhours_arr($user_id-$days_julian)]
-				} else {
-				    set user_day_total_plannedhours_arr($user_id-$days_julian) $user_day_task_arr($user_id-$days_julian-$project_id)
-				}	
-				incr user_ctr
 			    }
-        		}
-			ns_log NOTICE "$project_id, $start_date, $end_date, workdays: $no_workdays, users: $user_list, Planned Units: $planned_units<br>$out"
-		    }	
-	}
-
-	# Evaluate min/max date to determine the start and end date of report 
-	# Might be different from the dates set in the form because some tasks 
-	# can start or end earlier 
-
-	# if { $start_date > $min_date } { set min_date $start_date }
-	# if { $end_date > $max_date } { set max_date $end_date }
-	# if { $next_workday > $max_date } { set max_date $next_workday }
-
+			    
+			    # Check for recursive loop
+			    if {$ctr > 20} {
+				set loop 0
+			    }
+			    incr ctr
+			}
+			if { [info exists user_day_task_arr($user_id-$next_workday_julian-$super_project_id)] } {
+			    set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr [expr $planned_units.0 / $number_of_users_on_task] + $user_day_task_arr($user_id-$days_julian-$super_project_id)]
+			} else {
+			    set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr $planned_units.0 * $user_percentage/100]
+			}
+			
+			# Set USER totals
+			if { [info exists user_day_total_plannedhours_arr($user_id-$days_julian)] } {
+			    set user_day_total_plannedhours_arr($user_id-$days_julian) [expr $user_day_task_arr($user_id-$days_julian-$project_id) + $user_day_total_plannedhours_arr($user_id-$days_julian)]
+			} else {
+			    set user_day_total_plannedhours_arr($user_id-$days_julian) $user_day_task_arr($user_id-$days_julian-$project_id)
+			}	
+			incr user_ctr
+		    }
+		} else {
+		    # Distribute hours over workdays 
+		    if { [string first "." $planned_units] == -1 } { set planned_units $planned_units.0 }  
+		    if { [string first "." $no_workdays] == -1 } { set no_workdays $no_workdays.0 }  
+		    set hours_per_day [expr $planned_units / $no_workdays / $number_of_users_on_task ]
+		    
+		    set workdays [util_memoize [list im_absence_working_days_weekend_only -start_date "$start_date" -end_date "$end_date"]]
+		    set no_users [llength $workdays]
+		    #			set workdays [util_memoize [list db_list get_work_days "select * from im_absences_working_days_period_weekend_only('$start_date', '$end_date') as series_days (days date)"]]
+		    
+		    #			set no_users [util_memoize [list db_string get_number_users "select count(*) from im_absences_working_days_period_weekend_only('$start_date', '$end_date') as series_days (days date)" -default 1]]
+		    
+		    foreach days $workdays {		
+			set days_julian [dt_ansi_to_julian_single_arg "$days"]
+			set user_ctr 0
+			foreach user_id $user_percentage_list {
+			    set user_id [lindex [lindex $user_percentage_list $user_ctr] 0]
+			    set user_percentage [lindex [lindex $user_percentage_list $user_ctr] 1]
+			    # Sanity check: Percentage assignment required
+			    if { "" == $user_percentage || ![info exists user_percentage] } {
+				set user_percentage [expr 100 / $no_users]
+				# ad_return_complaint 1 "</br></br>No assignment found for user:
+				#            <a href='/intranet/users/view?user_id=$user_id'>[im_name_from_user_id $user_id]</a>
+				#	        on project task:<a href='/intranet/projects/view?project_id=$project_id'>$project_id</a>.<br>
+				#		Please <a href='/intranet/projects/view?project_id=$project_id'>assign a occupation</a> for each task and try again</a>. 
+				#		</br></br>
+				# "
+			    }
+			    
+			    # set user_day_task_arr($user_id-$days_julian-$project_id) [expr $hours_per_day * $user_percentage/100]
+			    set user_day_task_arr($user_id-$days_julian-$project_id) $hours_per_day 
+			    
+			    # get the superproject
+			    set super_project_id $project_id
+			    set loop 1
+			    set ctr 0
+			    while {$loop} {
+				set loop 0
+				if {[exists_and_not_null parent_hash($super_project_id)]} {
+				    set parent_id $parent_hash($super_project_id)
+				} else {
+				    set parent_id ""
+				} 
+				if {$parent_id != ""} {
+				    set super_project_id $parent_id
+				    set loop 1
+				}
+				
+				# Check for recursive loop
+				if {$ctr > 20} {
+				    set loop 0
+				}
+				incr ctr
+			    }
+			    if { [info exists user_day_task_arr($user_id-$days_julian-$super_project_id)] } {
+				set user_day_task_arr($user_id-$days_julian-$super_project_id) [expr $hours_per_day + $user_day_task_arr($user_id-$days_julian-$super_project_id)]
+			    } else {
+				set user_day_task_arr($user_id-$days_julian-$super_project_id) $hours_per_day
+			    }
+			    # Set USER totals
+			    if { [info exists user_day_total_plannedhours_arr($user_id-$days_julian)] } {
+				set user_day_total_plannedhours_arr($user_id-$days_julian) [expr $user_day_task_arr($user_id-$days_julian-$project_id) + $user_day_total_plannedhours_arr($user_id-$days_julian)]
+			    } else {
+				set user_day_total_plannedhours_arr($user_id-$days_julian) $user_day_task_arr($user_id-$days_julian-$project_id)
+			    }	
+			    incr user_ctr
+			}
+		    }
+		    ns_log NOTICE "$project_id, $start_date, $end_date, workdays: $no_workdays, users: $user_list, Planned Units: $planned_units<br>$out"
+		}	
+	    }
+	    
+	    # Evaluate min/max date to determine the start and end date of report 
+	    # Might be different from the dates set in the form because some tasks 
+	    # can start or end earlier 
+	    
+	    # if { $start_date > $min_date } { set min_date $start_date }
+	    # if { $end_date > $max_date } { set max_date $end_date }
+	    # if { $next_workday > $max_date } { set max_date $next_workday }
+	    
 	}
     }
-
-
+    
+    
     # ------------------------------------------------------------------
     # Calculate the main resource assignment hash by looping
     # through the project hierarchy x looping through the date dimension  
