@@ -471,7 +471,7 @@ if {$filter_advanced_p && [im_table_exists im_dynfield_attributes]} {
     # Add the additional condition to the "where_clause"
     if {"" != $dynfield_extra_where} { 
 	    append extra_where "
-                and person_id in $dynfield_extra_where
+                and p.person_id in $dynfield_extra_where
             "
     }
 }
@@ -521,6 +521,10 @@ if { [string compare $letter "all"] == 0 } {
     # We can't get around counting in advance if we want to be able to 
     # sort inside the table on the page for only those users in the 
     # query results
+
+    ns_log Notice "FLAG1  ********"
+    ns_log Notice "$sql"
+    ns_log  Notice "$extra_where"
     set total_in_limited [db_string advance_count "
 	select 
 		count(1) 
