@@ -209,12 +209,23 @@ if {$enable_nested_projects_p} {
         set project_parent_options [im_project_options -exclude_subprojects_p 0 -exclude_status_id [im_project_status_closed] -project_id $super_project_id]
     }
 
+    if {"" != $parent_id} {
+	
+	template::element::create $form_id parent_id -optional \
+	    -label "[_ intranet-core.Parent_Project]" \
+	    -widget "select" \
+	    -mode display \
+	    -options $project_parent_options \
+	    -after_html "[im_gif help "Do you want to create a subproject (a project that is part of an other project)? Leave the field blank (-- Please Select --) if you are unsure."]"
+    } else {
 
-    template::element::create $form_id parent_id -optional \
-    	-label "[_ intranet-core.Parent_Project]" \
-        -widget "select" \
-	-options $project_parent_options \
-	-after_html "[im_gif help "Do you want to create a subproject (a project that is part of an other project)? Leave the field blank (-- Please Select --) if you are unsure."]"
+	template::element::create $form_id parent_id -optional \
+	    -label "[_ intranet-core.Parent_Project]" \
+	    -widget "select" \
+	    -options $project_parent_options \
+	    -after_html "[im_gif help "Do you want to create a subproject (a project that is part of an other project)? Leave the field blank (-- Please Select --) if you are unsure."]"
+
+    }
 } else {
     template::element::create $form_id parent_id -optional -widget "hidden"
 }
@@ -227,11 +238,21 @@ if {$user_admin_p} {
     set  help_text "<A HREF='/intranet/companies/new'>[im_gif new "Add a new client"]</A> $help_text"
 }
 
-template::element::create $form_id company_id \
-    -label "[_ intranet-core.Customer]" \
-    -widget "select" \
-    -options $customer_list_options \
-    -after_html $help_text
+
+if {"" != $parent_id} {
+    template::element::create $form_id company_id \
+	-label "[_ intranet-core.Customer]" \
+	-widget "select" \
+	-mode display \
+	-options $customer_list_options \
+	-after_html $help_text
+} else {
+    template::element::create $form_id company_id \
+	-label "[_ intranet-core.Customer]" \
+	-widget "select" \
+	-options $customer_list_options \
+	-after_html $help_text
+}
 
 # Include current PM in list of potential PMs if not there
 # already ...
