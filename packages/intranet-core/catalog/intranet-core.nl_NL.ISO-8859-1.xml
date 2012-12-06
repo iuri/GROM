@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="nl_NL" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="nl_NL" charset="ISO-8859-1">
 
   <msg key="--_Please_select_--">-- Selecteer --</msg>
   <msg key="1111">1111</msg>
@@ -153,7 +153,8 @@
   <msg key="Bug-Tracker">Bug tracker</msg>
   <msg key="Bug_Request">Melding bug</msg>
   <msg key="Bug_Tracker">Bug tracker</msg>
-  <msg key="Bug_Tracker_Task">Deel restauratie </msg>
+  <msg key="Bug_Tracker_Cont">Volledige restauratie</msg>
+  <msg key="Bug_Tracker_Task">Deel restauratie</msg>
   <msg key="Bugs">Bugs</msg>
   <msg key="Bulgaria">Bulgarije</msg>
   <msg key="Business">Zakelijk</msg>
@@ -1548,6 +1549,7 @@
   <msg key="Send_Notification">Verzend notificatie</msg>
   <msg key="Senior_Managers">Senior Managers</msg>
   <msg key="senior_managers">Senior managers</msg>
+  <msg key="Service_L_Agreement">Diensten Niveau Overeenkomst</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">Ziekte</msg>
   <msg key="Simple_Surveys">Eenvoudig onderzoek</msg>
@@ -1566,6 +1568,7 @@
   <msg key="Software_Company">Software bedrijf</msg>
   <msg key="Software_Development">Advies</msg>
   <msg key="Software_Maintenance">Schade</msg>
+  <msg key="Software_Rel_Item">Software release item</msg>
   <msg key="Software_Release">Software release</msg>
   <msg key="Software_Testing">Testen van de software</msg>
   <msg key="Software_Updates">Update</msg>
@@ -1668,6 +1671,7 @@
   <msg key="Trans__Edit">Trans Edit</msg>
   <msg key="Trans__Edit__Proof">Trans Edit Proof</msg>
   <msg key="Trans__Int_Spotcheck">Trans Int Spotcheck</msg>
+  <msg key="Trans_Dynamic_WF">Trans Only (Dynamic WF)</msg>
   <msg key="Trans_Management">Trans Management</msg>
   <msg key="Trans_Only">Trans Only</msg>
   <msg key="Trans_Tasks">Trans Tasks</msg>

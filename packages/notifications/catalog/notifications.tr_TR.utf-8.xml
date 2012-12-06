@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<message_catalog package_key="notifications" package_version="5.1.6" locale="tr_TR" charset="utf-8">
+<message_catalog package_key="notifications" locale="tr_TR" charset="utf-8">
 
   <msg key="Contents">İçerik:</msg>
   <msg key="Delivery_Method">Teslimat Yöntemi</msg>

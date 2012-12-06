@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="en_US" charset="ISO-8859-1">
 
   <msg key="--_Please_select_--">-- Please select --</msg>
   <msg key="1111">1111</msg>
@@ -157,6 +157,7 @@
   <msg key="Bug-Tracker">Bug-Tracker</msg>
   <msg key="Bug_Request">Bug Request</msg>
   <msg key="Bug_Tracker">Bug Tracker</msg>
+  <msg key="Bug_Tracker_Cont">Bug Tracker Container</msg>
   <msg key="Bug_Tracker_Task">Bug Tracker Task</msg>
   <msg key="Bugs">Bugs</msg>
   <msg key="Bulgaria">Bulgaria</msg>
@@ -446,6 +447,7 @@
   <msg key="Finance_Help">Finance Help</msg>
   <msg key="Finance_Home">Finance Home</msg>
   <msg key="Finland">Finland</msg>
+  <msg key="First_Names">First Names</msg>
   <msg key="First_names">First names</msg>
   <msg key="for">for</msg>
   <msg key="for_Deliv">for Delivery</msg>
@@ -621,6 +623,7 @@
   <msg key="ICQ">ICQ</msg>
   <msg key="ICQ_Number">ICQ Number</msg>
   <msg key="Id">Id</msg>
+  <msg key="Ideas">Ideas</msg>
   <msg key="Illustration">Illustration</msg>
   <msg key="Import_Company_CSV">Import Company CSV</msg>
   <msg key="Import_Company_CVS">Import Company CVS</msg>
@@ -699,6 +702,7 @@
   <msg key="l">l</msg>
   <msg key="La_Caixa_EUR">La Caixa EUR</msg>
   <msg key="Last_3_months">Last 4 months</msg>
+  <msg key="Last_Name">Last Name</msg>
   <msg key="Last_name">Last name</msg>
   <msg key="Last_Visit">Last Visit</msg>
   <msg key="Last_visit">Last visit</msg>
@@ -739,6 +743,7 @@
   <msg key="lt_Aadir_Cosasintranet-c">Añadir</msg>
   <msg key="lt_Aadirintranet-coreAdd">Add</msg>
   <msg key="lt_acs-automated-testing">lt_acs-automated-testing</msg>
+  <msg key="lt_Actually_counts_the_n">Actually counts the number of main projects (no subprojects) starting in the last 30 days.</msg>
   <msg key="lt_Add_a_manual_task_to_">Add a 'manual' task to the project.</msg>
   <msg key="lt_Add_a_new_annual_reve">Add a new annual revenue measure</msg>
   <msg key="lt_Add_a_new_company_sta">Add a new company status</msg>
@@ -787,6 +792,7 @@
   <msg key="lt_Change_the_system_par">Change the system parametrization such as directories, URLs, etc...</msg>
   <msg key="lt_Choose_this_option_fo">Choose this option for detailed security information. With this option the security update service transmits information about your configuration that might help us to assess your ]project-open[ system configuration including package versions and operating system version information. It also includes your email address so that we can alert your in special situations.</msg>
   <msg key="lt_Choose_this_option_if">Choose this option if you prefer not to reveal any information to ]project-open[ that might identify you or your organization.</msg>
+  <msg key="lt_Click_here_to_configu">Click here to configure this navigation bar</msg>
   <msg key="lt_Click_here_to_get_hel">Click here to get help for this page</msg>
   <msg key="lt_Click_right_and_choos">Click right and choose 'Save target as' to download the file</msg>
   <msg key="lt_Clientesintranet-file">Clients</msg>
@@ -1320,6 +1326,7 @@ other way for the user to find out.</msg>
   <msg key="Perc">%%</msg>
   <msg key="Perc_Compl">% Compl.</msg>
   <msg key="Percent_Completed">Percent Completed</msg>
+  <msg key="Percentage">Percentage</msg>
   <msg key="Permissions">Permissions</msg>
   <msg key="Personal">Human Resources</msg>
   <msg key="Peru">Peru</msg>
@@ -1327,6 +1334,7 @@ other way for the user to find out.</msg>
   <msg key="Phone">Phone</msg>
   <msg key="pl">pl</msg>
   <msg key="PL_Fachbereich">PL Fachbereich</msg>
+  <msg key="Planning">Planning</msg>
   <msg key="Please_Select">Please select</msg>
   <msg key="Please_Select_Type_for_Object">Please select a type of %object_type_l10n%</msg>
   <msg key="PM_Help">PM Help</msg>
@@ -1374,6 +1382,7 @@ other way for the user to find out.</msg>
   <msg key="Profiles">Profiles</msg>
   <msg key="Profit">Profit</msg>
   <msg key="Profit_and_Loss">Profit &amp; Loss</msg>
+  <msg key="Program">Program</msg>
   <msg key="Program_Enhan_K">Program Enhan. K</msg>
   <msg key="Program_Enhancement">Program Enhancement</msg>
   <msg key="Project">Project</msg>
@@ -1428,6 +1437,7 @@ other way for the user to find out.</msg>
   <msg key="Projects_Admin">Projects Admin</msg>
   <msg key="Projekt_Konzern">Project Konzern</msg>
   <msg key="Projekte_Konzern">Projects Konzern</msg>
+  <msg key="Projeto">Projeto</msg>
   <msg key="Proof_Only">Proof Only</msg>
   <msg key="Proofing">Proofing</msg>
   <msg key="Provider">Provider</msg>
@@ -1529,6 +1539,7 @@ other way for the user to find out.</msg>
   <msg key="Send_Notification">Send Notification</msg>
   <msg key="Senior_Managers">Senior Managers</msg>
   <msg key="senior_managers">Senior Managers</msg>
+  <msg key="Service_L_Agreement">Service Level Agreement</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">Sick</msg>
   <msg key="Simple_Surveys">Simple Surveys</msg>
@@ -1547,6 +1558,7 @@ other way for the user to find out.</msg>
   <msg key="Software_Company">Software Company</msg>
   <msg key="Software_Development">Software Development</msg>
   <msg key="Software_Maintenance">Software Maintenance</msg>
+  <msg key="Software_Rel_Item">Software Release Item</msg>
   <msg key="Software_Release">Software Release</msg>
   <msg key="Software_Testing">Software Testing</msg>
   <msg key="Software_Updates">Software Updates</msg>
@@ -1616,6 +1628,7 @@ other way for the user to find out.</msg>
   <msg key="The_web_with_Google">The web with Google</msg>
   <msg key="Ticket">Ticket</msg>
   <msg key="Ticket_Members">Ticket Members</msg>
+  <msg key="Tickets">Tickets</msg>
   <msg key="Time_plan">Time plan</msg>
   <msg key="Time_sheet">Time sheet</msg>
   <msg key="Timesheet">Timesheet</msg>
@@ -1646,6 +1659,7 @@ other way for the user to find out.</msg>
   <msg key="Trans__Edit">Trans Edit</msg>
   <msg key="Trans__Edit__Proof">Trans Edit Proof</msg>
   <msg key="Trans__Int_Spotcheck">Trans Int Spotcheck</msg>
+  <msg key="Trans_Dynamic_WF">Trans Only (Dynamic WF)</msg>
   <msg key="Trans_Management">Trans Management</msg>
   <msg key="Trans_Only">Trans Only</msg>
   <msg key="Trans_Tasks">Trans Tasks</msg>
@@ -1696,18 +1710,25 @@ other way for the user to find out.</msg>
   <msg key="USD">USD</msg>
   <msg key="User">User</msg>
   <msg key="user">user</msg>
+  <msg key="User_Admin_Information">User Admin Information</msg>
   <msg key="User_Administration">User Administration</msg>
   <msg key="user_administration">user administration</msg>
+  <msg key="User_Basic_Information">User Basic Information</msg>
   <msg key="User_Configuration_Items">Configuration Items</msg>
+  <msg key="User_Contact_Information">User Contact Information</msg>
   <msg key="User_Exists">User Exits</msg>
   <msg key="User_Exits">User Exits</msg>
   <msg key="User_Id">User ID</msg>
+  <msg key="User_Localization">User Localization</msg>
+  <msg key="User_Localization_Information">User Localization Information</msg>
   <msg key="User_Matrix">User Matrix</msg>
   <msg key="User_name">User name</msg>
   <msg key="User_Notifications">User Notifications</msg>
+  <msg key="User_Portrait">User Portrait</msg>
   <msg key="User_Profiles">User Profiles</msg>
   <msg key="User_search">User search</msg>
   <msg key="User_Skills">User Skills</msg>
+  <msg key="User_Skin_Information">User Skin Information</msg>
   <msg key="User_state">User state</msg>
   <msg key="User_Status">User Status</msg>
   <msg key="User_Survey_Component">User Surveys</msg>

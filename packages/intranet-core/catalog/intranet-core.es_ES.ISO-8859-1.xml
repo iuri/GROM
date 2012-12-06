@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="es_ES" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="es_ES" charset="ISO-8859-1">
 
   <msg key="--_Please_select_--">-- Por favor seleccione --</msg>
   <msg key="1111">1111</msg>
@@ -164,6 +164,7 @@
   <msg key="Bug-Tracker">lista de errores</msg>
   <msg key="Bug_Request">Aviso de error</msg>
   <msg key="Bug_Tracker">Rastreador de errores</msg>
+  <msg key="Bug_Tracker_Cont">Contenedor gestor errores</msg>
   <msg key="Bug_Tracker_Task">tareas de la lista de errores</msg>
   <msg key="Bugs">Errores</msg>
   <msg key="Bulgaria">Bulgaria</msg>
@@ -1561,6 +1562,7 @@
   <msg key="Send_Notification">Enviar notificación</msg>
   <msg key="Senior_Managers">Directivos</msg>
   <msg key="senior_managers">Directivos</msg>
+  <msg key="Service_L_Agreement">Acuerdo de nivel de servicio</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">Enfermedad</msg>
   <msg key="Simple_Surveys">Encuestas simples</msg>
@@ -1579,6 +1581,7 @@
   <msg key="Software_Company">Empresa de software</msg>
   <msg key="Software_Development">Desarrollo de software</msg>
   <msg key="Software_Maintenance">Mantenimiento de software</msg>
+  <msg key="Software_Rel_Item">Elem. release software</msg>
   <msg key="Software_Release">Release de software</msg>
   <msg key="Software_Updates">Actualizaciones de software</msg>
   <msg key="Some_Importance">Importancia moderada</msg>
@@ -1679,6 +1682,7 @@
   <msg key="Trans__Edit">Trad + Rev</msg>
   <msg key="Trans__Edit__Proof">Trad + Rev + Corr</msg>
   <msg key="Trans__Int_Spotcheck">Trad + Spotcheck int</msg>
+  <msg key="Trans_Dynamic_WF">Trans Only (Dynamic WF)</msg>
   <msg key="Trans_Management">Gestión de trad.</msg>
   <msg key="Trans_Only">Trad solo</msg>
   <msg key="Trans_Tasks">Trad Tareas</msg>

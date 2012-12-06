@@ -3,6 +3,7 @@
 
   <msg key="Apply">Aplicar</msg>
   <msg key="Delete">Apagar</msg>
+  <msg key="Task_Nr">Tarefa</msg>
   <msg key="There_are_no_active_tasks">Não existem tarefas ativas para seus parâmetros</msg>
   <msg key="Unable_to_delete_tasks">Impossível apagar tarefas</msg>
 </message_catalog>

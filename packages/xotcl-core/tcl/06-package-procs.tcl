@@ -3,7 +3,7 @@ ad_library {
   
   @author Gustaf Neumann (neumann@wu-wien.ac.at)
   @creation-date 2007-09-24
-  @cvs-id $Id: 06-package-procs.tcl,v 1.2 2011/02/28 12:19:32 po34demo Exp $
+  @cvs-id $Id: 06-package-procs.tcl,v 1.28 2010/06/25 08:46:27 gustafn Exp $
 }
 
 namespace eval ::xo {

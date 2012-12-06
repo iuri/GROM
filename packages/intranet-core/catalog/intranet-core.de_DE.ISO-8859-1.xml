@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="de_DE" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="de_DE" charset="ISO-8859-1">
 
   <msg key="--_Please_select_--">-- Bitte wählen --</msg>
   <msg key="1111">1111</msg>
@@ -155,6 +155,7 @@
   <msg key="Bug-Tracker">Bugtracker</msg>
   <msg key="Bug_Request">Bug melden</msg>
   <msg key="Bug_Tracker">Bug Tracker</msg>
+  <msg key="Bug_Tracker_Cont">Bugtracker Container</msg>
   <msg key="Bug_Tracker_Task">Bugtracker Aufgabe</msg>
   <msg key="Bugs">Fehler</msg>
   <msg key="Bulgaria">Bulgarien</msg>
@@ -1265,7 +1266,6 @@ Passwort: %password%
   <msg key="Profiles">Profile</msg>
   <msg key="Profit">Ertrag</msg>
   <msg key="Profit_and_Loss">GuV</msg>
-  <msg key="Program_Enhan_BKB">Program Erweiterung (PE)</msg>
   <msg key="Program_Enhan_K">Kleinauftrag Konzern</msg>
   <msg key="Program_Enhancement">Programmerweiterung</msg>
   <msg key="Project">Projektnr.</msg>
@@ -1398,6 +1398,7 @@ Passwort: %password%
   <msg key="Send_Notification">Benachrichtigung senden</msg>
   <msg key="Senior_Managers">Geschäftsführung</msg>
   <msg key="senior_managers">Geschäftsführung</msg>
+  <msg key="Service_L_Agreement">Service Level Agreement</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">Krank</msg>
   <msg key="Singapore">Singapur</msg>
@@ -1414,6 +1415,7 @@ Passwort: %password%
   <msg key="Software_Company">Software Firma</msg>
   <msg key="Software_Development">Software Development</msg>
   <msg key="Software_Maintenance">Softwarewartung</msg>
+  <msg key="Software_Rel_Item">Software Release Item</msg>
   <msg key="Software_Release">Software-Release</msg>
   <msg key="Software_Testing">Software Test</msg>
   <msg key="Software_Updates">Softwareupdates</msg>
@@ -1508,6 +1510,7 @@ Passwort: %password%
   <msg key="Trans__Edit">TransCheck+Revision</msg>
   <msg key="Trans__Edit__Proof">Übersetzung Edit Proof</msg>
   <msg key="Trans__Int_Spotcheck">Übers.+Int.Check</msg>
+  <msg key="Trans_Dynamic_WF">Nur TransCheck (Dynamic WF)</msg>
   <msg key="Trans_Management">Übersetzungsmanagement</msg>
   <msg key="Trans_Only">Nur Übersetzung</msg>
   <msg key="Trans_Tasks">Trans Tasks</msg>

@@ -9,4 +9,5 @@
   <msg key="Download_Gantt_File">Fazer Download do arquivo GanttProject</msg>
   <msg key="No_Gantt_preview_available">Sem preview do gráfico de Gantt</msg>
   <msg key="OK">OK</msg>
+  <msg key="Resource_Planning_Report">Planejamento de Recursos</msg>
 </message_catalog>

@@ -47,8 +47,10 @@
   <msg key="Go_to_monthsname">Ir para %months.name%</msg>
   <msg key="Go_to_year_next_year">Ir para o ano %next_year%</msg>
   <msg key="Go_to_year_prev_year">Ir para o ano %prev_year%</msg>
+  <msg key="goto_weekday">Ir para %days_of_week.day_short% %days_of_week.monthday%</msg>
   <msg key="Grant">Conceder</msg>
   <msg key="Grant_Permissions">Conceder Permissões</msg>
+  <msg key="Hours">Horas</msg>
   <msg key="is_recurring">O item é recorrente.</msg>
   <msg key="Item">Ítem</msg>
   <msg key="lt_Are_you_sure_you_want">Você tem certeza que quer apagar este calendário. Todos os ítems e todas as permissões associadas com este calendário também serão apagados.</msg>
@@ -125,6 +127,7 @@
   <msg key="Type_Help">Seu item de calendário pode ser classificado em tipos. Escolha um dos abaixo.</msg>
   <msg key="Use_Hours_Below">Usar Horários Abaixo:</msg>
   <msg key="Wednesday">Quarta</msg>
+  <msg key="Week_of">Semana de</msg>
   <msg key="y-m-d">a-m-d</msg>
   <msg key="year">ano</msg>
   <msg key="Yes">Sim</msg>

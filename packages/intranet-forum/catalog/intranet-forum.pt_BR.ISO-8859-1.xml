@@ -41,6 +41,7 @@
   <msg key="Inbox">Caixa de Entrada</msg>
   <msg key="Incident">Incidente</msg>
   <msg key="Incident_Information">Informação do Incidente</msg>
+  <msg key="lt_Reply_to_this_topic_t">Responder esse %topic_type%</msg>
   <msg key="lt_scope_____set_html___">escopo</msg>
   <msg key="Mark_as_read">Marcar como lida</msg>
   <msg key="Mark_as_unread">Marcar como não lida</msg>

@@ -1,0 +1,16 @@
+<master>
+<property name="title">@page_title;noquote@</property>
+<property name="main_navbar_label">finance</property>
+<property name="sub_navbar">@sub_navbar_html;noquote@</property>
+
+<multiple name="active_projects">
+
+  <if @active_projects.llevel@ gt @active_projects.current_level@>
+    <ul>                                                                    
+  </if>
+  <if @active_projects.llevel@ lt @active_projects.current_level@>
+    </ul>
+  </if>
+  <li><a href=../projects/view?project_id=@active_projects.project_id@>@active_projects.project_nr@</a>:
+        @active_projects.project_name@
+</multiple>

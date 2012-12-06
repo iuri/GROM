@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="intranet-resource-management" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Dim_year">year</msg>
+</message_catalog>

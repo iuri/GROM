@@ -4,7 +4,7 @@
   @author Gustaf Neumann (neumann@wu-wien.ac.at)
   @author Neophytos Demetriou (k2pts@phigita.net)
   @creation-date 2005-11-26
-  @cvs-id $Id: 30-widget-procs.tcl,v 1.2 2011/02/28 12:19:33 po34demo Exp $
+  @cvs-id $Id: 30-widget-procs.tcl,v 1.50 2011/02/04 23:51:32 gustafn Exp $
 }
 
 ::Serializer exportMethods {
@@ -171,8 +171,8 @@ namespace eval ::xo::tdom {
         set HTMLattribute $attribute
       }
       #my msg "[my name] check for $attribute => [my exists $attribute]"
-      if {[my uplevel info exists $attribute]} {
-        lappend pairs $HTMLattribute [my uplevel set $attribute]
+      if {[my uplevel [list info exists $attribute]]} {
+        lappend pairs $HTMLattribute [my uplevel [list set $attribute]]
       }
     }
     return $pairs

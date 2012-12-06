@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-helpdesk" package_version="3.4.0.7.0" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="intranet-helpdesk" locale="en_US" charset="ISO-8859-1">
 
   <msg key="Action">Action</msg>
   <msg key="Add_a_new_ticket">New Ticket</msg>
@@ -33,6 +33,7 @@
   <msg key="Customer_Info">Customer Info</msg>
   <msg key="Customer_review">Customer Review</msg>
   <msg key="Delete">Delete</msg>
+  <msg key="Delete_Association">Delete Association</msg>
   <msg key="Deleted">Deleted</msg>
   <msg key="Dir">Dir</msg>
   <msg key="Duplicate">Duplicate</msg>
@@ -67,6 +68,7 @@
   <msg key="Quoting">Quoting</msg>
   <msg key="Re-Open">Re-Open</msg>
   <msg key="Rejected">Rejected</msg>
+  <msg key="Rel_membership_rel">Membership Relation</msg>
   <msg key="Related_Tickets">Related Tickets</msg>
   <msg key="Remove_checked_items">Remove checked items</msg>
   <msg key="Report_Request">Report Request</msg>

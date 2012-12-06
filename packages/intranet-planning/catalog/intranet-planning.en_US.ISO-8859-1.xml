@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="intranet-planning" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="New_quote_from_planning_data">New quote from planning data</msg>
+</message_catalog>

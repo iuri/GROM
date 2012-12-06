@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="zh_CN" charset="utf-8">
+<message_catalog package_key="intranet-core" locale="zh_CN" charset="utf-8">
 
   <msg key="--_Please_select_--">-- 请选择 --  </msg>
   <msg key="1111">1111</msg>
@@ -164,6 +164,7 @@
   <msg key="Bug-Tracker">纠错</msg>
   <msg key="Bug_Request">错误请求</msg>
   <msg key="Bug_Tracker">纠错</msg>
+  <msg key="Bug_Tracker_Cont">错误跟踪容器</msg>
   <msg key="Bug_Tracker_Task">纠错任务</msg>
   <msg key="Bugs">纠错</msg>
   <msg key="Bulgaria">保加利亚</msg>
@@ -1582,6 +1583,7 @@
   <msg key="Send_Notification">发送通知</msg>
   <msg key="Senior_Managers">高级经理</msg>
   <msg key="senior_managers">高级经理</msg>
+  <msg key="Service_L_Agreement">服务级别协议</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">生病</msg>
   <msg key="Simple_Surveys">简单调查</msg>
@@ -1600,6 +1602,7 @@
   <msg key="Software_Company">软件公司</msg>
   <msg key="Software_Development">软件开发</msg>
   <msg key="Software_Maintenance">软件维护</msg>
+  <msg key="Software_Rel_Item">软件发布项目</msg>
   <msg key="Software_Release">软件发布</msg>
   <msg key="Software_Testing">软件测试</msg>
   <msg key="Software_Updates">软件更新</msg>
@@ -1702,6 +1705,7 @@
   <msg key="Trans__Edit">翻译编辑</msg>
   <msg key="Trans__Edit__Proof">翻译 编辑 校验</msg>
   <msg key="Trans__Int_Spotcheck">翻译 抽检</msg>
+  <msg key="Trans_Dynamic_WF">仅仅翻译(动态工作流)</msg>
   <msg key="Trans_Management">翻译管理</msg>
   <msg key="Trans_Only">仅翻译</msg>
   <msg key="Trans_Tasks">翻译任务</msg>

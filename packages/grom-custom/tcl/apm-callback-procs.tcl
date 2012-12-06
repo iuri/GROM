@@ -402,5 +402,13 @@ ad_proc -private grom::after_upgrade {
 		im_permission_flush
 		db_release_unused_handles
 	    }		
+
+	    0.1d4 0.1d5 {
+		db_transaction {		    
+		    im_permission_flush		    
+		    db_release_unused_handles
+		}
+	    }
+	    
 	} 
 }

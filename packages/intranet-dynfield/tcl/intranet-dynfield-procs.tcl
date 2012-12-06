@@ -911,11 +911,12 @@ ad_proc -public im_dynfield::elements {
     db_foreach select_elements " " {
         if {[im_object_permission -object_id $dynfield_attribute_id -user_id $user_id -privilege $privilege]} {
             lappend attributes [list $dynfield_attribute_id $attribute_id $section_heading $attribute_name \
-                $pretty_name $attribute_id $sort_order $widget $required_p]
+				    $pretty_name $attribute_id $sort_order $widget $required_p]
         }
     }
     return $attributes
 }
+
 
 ad_proc -public im_dynfield::append_attributes_to_form {
     {-object_subtype_id "" }
@@ -933,62 +934,63 @@ ad_proc -public im_dynfield::append_attributes_to_form {
     @option object_type The object_type attributes you want to add to the form
     @option object_subtype_id Specifies the "subtype" of the objects (i.e. project_type_id)
     @option advanced_filter_p Tells us that the dynfields are used for an 
-            "advanced filter" as oposed to a data form. Text fields dont make
-            much sense here, so we'll skip them.
-
+    "advanced filter" as oposed to a data form. Text fields dont make
+    much sense here, so we'll skip them.
+    
     @param include_also_hard_coded_p Should we include fields that are also hard
-            coded in ]po[ screens?
-
+    coded in po screens?
+	
     @param page_url
-		Serves to identify the page layout.
-
+    Serves to identify the page layout.
+    
     @return Returns the number of added fields
-
+    
     The code consists of two main parts:
     <ul>
     <li>Adding the the attributes to the forum and
     <li>Extracting the values of the attributes from a number of storage tables.
-    </ul>
+    </ul>	  
 } {
     if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: object_type=$object_type, object_id=$object_id" }
     set user_id [ad_get_user_id]
     set return_url [im_url_with_query]
-
+    
     # Does the specified layout page exist? Otherwise use "default".
     set page_url_exists_p [db_string exists "
-	select	count(*)
-	from	im_dynfield_layout_pages
-	where	object_type = :object_type and page_url = :page_url
+	select count(*)
+	from im_dynfield_layout_pages
+	where object_type = :object_type and page_url = :page_url
     "]
+
     if {!$page_url_exists_p} { set page_url "default" }
     set form_page_url $page_url
-
+    
     # Add a hidden "object_type" field to the form
     if {![template::element::exists $form_id "object_type"]} {
 	if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: creating object_type=$object_type" }
-    	template::element create $form_id "object_type" \
-    			    -datatype text \
-    			    -widget hidden \
-    			    -value  $object_type
+	template::element create $form_id "object_type" \
+	    -datatype text \
+	    -widget hidden \
+	    -value  $object_type
     }
     
     # add a hidden object_id field to the form
     if {[exists_and_not_null object_id]} {
-    	if {![template::element::exists $form_id "object_id"]} {
+	if {![template::element::exists $form_id "object_id"]} {
 	    if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: creating object_id=$object_id" }
 	    template::element create $form_id "object_id" \
 		-datatype integer \
 		-widget hidden \
 		-value  $object_id
-    	}
+	}
     }
-
+    
     # Get display mode per attribute and object_type_id
     set sql "
-       select	m.attribute_id,
-                m.object_type_id as ot,
-                m.display_mode as dm,
-		m.help_text as ht
+       select m.attribute_id,
+              m.object_type_id as ot,
+              m.display_mode as dm,
+              m.help_text as ht
         from
                 im_dynfield_type_attribute_map m,
                 im_dynfield_attributes a,
@@ -1000,10 +1002,10 @@ ad_proc -public im_dynfield::append_attributes_to_form {
     "
 
     if {!$include_also_hard_coded_p} { append sql "\t\tand also_hard_coded_p = 'f'\n" }
-
+    
     # Default: Set all field to form's display mode
     set default_display_mode $form_display_mode
-
+    
     db_foreach attribute_table_map $sql {
 	set key "$attribute_id.$ot"
 	set display_mode_hash($key) $dm
@@ -1038,24 +1040,25 @@ ad_proc -public im_dynfield::append_attributes_to_form {
     # a list of filters for the /index.tcl page. In these
     # filters a special logic applies:
     # textarea: Doesn't make sense
+
     if {$advanced_filter_p} {
 	if {"default" == $page_url} {
-		# By default only show filters for drop-down type
-		# of fields
-		lappend extra_wheres "aw.widget in (
-			'select', 'generic_sql', 
-			'im_category_tree', 'im_cost_center_tree',
-			'checkbox'
-		)"
+	    # By default only show filters for drop-down type
+	    # of fields
+	    lappend extra_wheres "aw.widget in (
+'select', 'generic_sql', 
+'im_category_tree', 'im_cost_center_tree',
+'checkbox'
+)"
 	} else {
-		# The user has specified a specific "page_url"
-		# in order to specify a custom layout of the filters.
-		# Now exclude only Textarea fields. They are long and ugly...
-		lappend extra_wheres "aw.widget not in (
-			'textarea', 		-- Too long...
-			'date',			-- We need start and end date for ranges
-			'checkbox'		-- We would need a three-way select here
-		)"		
+	    # The user has specified a specific "page_url"
+	    # in order to specify a custom layout of the filters.
+	    # Now exclude only Textarea fields. They are long and ugly...
+	    lappend extra_wheres "aw.widget not in (
+'textarea', -- Too long...
+'date',-- We need start and end date for ranges
+'checkbox'-- We would need a three-way select here
+)"
 	}
     }
     set extra_where [join $extra_wheres "\n\t\tand "]
@@ -1069,75 +1072,77 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 	set also_hard_coded_p_sql "and (also_hard_coded_p is NULL or also_hard_coded_p = 'f')" 
     } 
 
+
+
     set attributes_sql "
 	select *
 	from (
-		select
-			dl.*,
-			coalesce(dl.pos_y, 10000 + a.attribute_id) as pos_y_coalesce,
-			a.attribute_id,
-			aa.attribute_id as dynfield_attribute_id,
-			a.table_name as attribute_table_name,
-			tt.id_column as attribute_id_column,
-			a.attribute_name,
-			a.pretty_name,
-			a.datatype, 
-			case when a.min_n_values = 0 then 'f' else 't' end as required_p, 
-			a.default_value, 
-			aw.widget,
-			aw.parameters,
-			aw.storage_type_id,
-			im_category_from_id(aw.storage_type_id) as storage_type
-		from
-			im_dynfield_attributes aa
-			LEFT OUTER JOIN	(
-				select	* 
-				from	im_dynfield_layout 
-				where	page_url = :form_page_url
-			) dl ON (aa.attribute_id = dl.attribute_id),
-			im_dynfield_widgets aw,
-			acs_attributes a 
-			left outer join 
-				acs_object_type_tables tt 
-				on (tt.object_type = :object_type and tt.table_name = a.table_name)
-		where 
-			a.object_type = :object_type
-			and a.attribute_id = aa.acs_attribute_id
-			and aa.widget_name = aw.widget_name
-			and $extra_where
-			$also_hard_coded_p_sql
-		) t
+	      select
+	      dl.*,
+	      coalesce(dl.pos_y, 10000 + a.attribute_id) as pos_y_coalesce,
+	      a.attribute_id,
+	      aa.attribute_id as dynfield_attribute_id,
+	      a.table_name as attribute_table_name,
+	      tt.id_column as attribute_id_column,
+	      a.attribute_name,
+	      a.pretty_name,
+	      a.datatype, 
+	      case when a.min_n_values = 0 then 'f' else 't' end as required_p, 
+	      a.default_value, 
+	      aw.widget,
+	      aw.parameters,
+	      aw.storage_type_id,
+	      im_category_from_id(aw.storage_type_id) as storage_type
+	      from
+	      im_dynfield_attributes aa
+	      LEFT OUTER JOIN(
+			      select* 
+			      from im_dynfield_layout 
+			      where page_url = :form_page_url
+			      ) dl ON (aa.attribute_id = dl.attribute_id),
+	      im_dynfield_widgets aw,
+	      acs_attributes a 
+	      left outer join 
+	      acs_object_type_tables tt 
+	      on (tt.object_type = :object_type and tt.table_name = a.table_name)
+	      where 
+	      a.object_type = :object_type
+	      and a.attribute_id = aa.acs_attribute_id
+	      and aa.widget_name = aw.widget_name
+	      and $extra_where
+	      $also_hard_coded_p_sql
+	      ) t
 	order by
-		pos_y_coalesce
-    "
-
+	pos_y_coalesce
+	"
+    
     set field_cnt 0
     db_foreach attributes $attributes_sql {
-
+	
 	# Check if the elements as disabled in the layout page
 	if {$page_url_exists_p && "" == $page_url} { continue }
-
+	
 	# Check if the current user has the right to read and write on the dynfield
 	set read_p [im_object_permission \
 			-object_id $dynfield_attribute_id \
 			-user_id $user_id \
 			-privilege "read" \
-	]
+		       ]
 	set write_p [im_object_permission \
-			-object_id $dynfield_attribute_id \
-			-user_id $user_id \
-			-privilege "write" \
-	]
+			 -object_id $dynfield_attribute_id \
+			 -user_id $user_id \
+			 -privilege "write" \
+			]
 	if {!$read_p} { continue }
-
+	
 	set display_mode $default_display_mode
 	if {$advanced_filter_p} {
 	    # In filter mode the user also needs to be able to "write"
 	    # the field, otherwise he won't be able to enter values...
 	    if {!$write_p} { continue }
 	}
-
-
+	
+	
 	# object_subtype_id can be a list, so go through the list
 	# and take the highest one (none - display - edit).
 	foreach subtype_id $object_subtype_id {
@@ -1149,26 +1154,27 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 		}
 	    }
 	}
-
+	
+	
 	if {$debug} { ns_log Notice "append_attributes_to_form2: name=$attribute_name, display_mode=$display_mode" }
-
+	
 	if {"edit" == $display_mode && "display" == $form_display_mode}  {
             set display_mode $form_display_mode
         }
 	if {"edit" == $display_mode && !$write_p}  {
             set display_mode "display"
         }
-
+	
 	if {$debug} { ns_log Notice "append_attributes_to_form3: name=$attribute_name, display_mode=$display_mode" }
-
+	
 	if {"none" == $display_mode} { continue }
-
+	
 	# Don't show a read-only mode in an "edit" form
 	# Doesn't work yet, because the field is expected later
-#	if {"display" == $display_mode && "edit" == $form_display_mode}  {
-#	    continue
-#        }
-
+	#if {"display" == $display_mode && "edit" == $form_display_mode}  {
+	#    continue
+	#        }
+	
 	# Resize the size and parameters of some widgets for the filter form
 	if {$advanced_filter_p} {
 	    switch $widget {
@@ -1178,12 +1184,14 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 		}
 	    }
 	}
-
+	
+	
+	
 	if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: attribute_name=$attribute_name, datatype=$datatype, widget=$widget, storage_type_id=$storage_type_id" }
-
+	
 	# set optional all attributes if search mode
 	if {$search_p} { set required_p "f" }
-
+	
 	# Show "wrench" for administrators
 	set admin_p [im_is_user_site_wide_or_intranet_admin [ad_get_user_id]]
 	set admin_html ""
@@ -1201,16 +1209,16 @@ ad_proc -public im_dynfield::append_attributes_to_form {
         }
 
 	im_dynfield::append_attribute_to_form \
-	    -attribute_name $attribute_name \
-	    -widget $widget \
-	    -form_id $form_id \
-	    -datatype $datatype \
-	    -display_mode $display_mode \
-	    -parameters $parameters \
-	    -required_p $required_p \
-	    -pretty_name $pretty_name \
-	    -help_text $help_message \
-	    -admin_html $admin_html
+	        -attribute_name $attribute_name \
+	        -widget $widget \
+	        -form_id $form_id \
+	        -datatype $datatype \
+	        -display_mode $display_mode \
+	        -parameters $parameters \
+	        -required_p $required_p \
+	        -pretty_name $pretty_name \
+	        -help_text $help_message \
+	        -admin_html $admin_html
 
 	# fraber 110405: doesn't work.
 	# Doesn't save form values when editing
@@ -1218,30 +1226,30 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 	#     if {[info exists x]} {
 	#         template::element::set_value $form_id $attribute_name $x
 	#     }
-
+	
 	incr field_cnt
-
-    }	
-
+	
+    }
+    
     # That's all until here IF this is a new object. Otherwise, we'll need 
     # to retreive the object's values from several tables and from the multi-fields...
     #
     if { ![template::form is_request $form_id] } { return }
     if { ![info exists object_id]} { return }
-
-
+    
+    
     # Same loop as before...
     db_foreach attributes $attributes_sql {
-
+	
 	# Check if the elements is disabled in the layout page
 	if {$page_url_exists_p && "" == $page_url} { continue }
-
+	
 	# Check if the current user has the right to read the dynfield
 	if {![im_object_permission -object_id $dynfield_attribute_id -user_id $user_id]} { continue }
 	
 	# Default display mode
 	set display_mode $default_display_mode
-
+	
 	# object_subtype_id can be a list, so go through the list
 	# and take the highest one (none - display - edit).
 	foreach subtype_id $object_subtype_id {
@@ -1253,10 +1261,10 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 		}
 	    }
 	}
-
+	
 	# Don't show "none" fields...
 	if {"none" == $display_mode} { continue }
-
+	
 	switch $storage_type {
 	    multimap {
 		# "MultiMaps" (select with multiple values) are stored in a separate
@@ -1265,24 +1273,24 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 		if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: multipmap storage" }
 		template::element set_properties $form_id $attribute_name "multiple_p" "1"
 		set value_list [db_list get_multiple_values "
-			select	value 
-			from	im_dynfield_attr_multi_value
-			where	attribute_id = :dynfield_attribute_id
-				and object_id = :object_id
-		"]
+		    select value 
+		    from im_dynfield_attr_multi_value
+		    where attribute_id = :dynfield_attribute_id
+		    and object_id = :object_id
+		    "]
 		template::element::set_values $form_id $attribute_name $value_list
 	    }
-	    value - default {
-
+	    value - default {	
+		
 		# ToDo: slow. This piece issues N SQL statements, instead of constructing
 		# a single SQL and issuing it once. Causes performance problems at BaselKB
 		# for example.
 		set value [db_string get_single_value "
-		    select	$attribute_name
-		    from	$attribute_table_name
-		    where	$attribute_id_column = :object_id
-		" -default ""]
-
+		    select $attribute_name
+		    from $attribute_table_name
+		    where $attribute_id_column = :object_id
+		    " -default ""]
+		
                 switch $widget {
                     date {
                         set date [template::util::date::create]
@@ -1290,20 +1298,20 @@ ad_proc -public im_dynfield::append_attributes_to_form {
                     }
                     default { }
                 }
-
+		
 		# Don't overwrite values with default value if the value is there already
                 if {$value ne ""} {
                     if {$debug} { ns_log Notice "im_dynfield::append_attributes_to_form: default storage: name=$attribute_name, value=$value" }
                     template::element::set_value $form_id $attribute_name $value
                 }
-
+		
 	    }
-
+	    
 	}
     }
-
+    
     # Callback to allow external functions to modify the values in the form
-
+    
     if {[catch {
 	callback ${object_type}_form_fill \
 	    -form_id $form_id \
@@ -1315,8 +1323,8 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 	    -include_also_hard_coded_p $include_also_hard_coded_p
     } err_msg]} {
 	ad_return_complaint 1 "<b>Error with callback '${object_type}_form_fill'</b>:<br>
-		Please check your callback code and make sure that your object type '$object_type'
-		is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core-init.tcl"
+Please check your callback code and make sure that your object type '$object_type'
+is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core-init.tcl"
 	ad_script_abort
     }
     
@@ -1325,21 +1333,22 @@ ad_proc -public im_dynfield::append_attributes_to_form {
 
 
 
-
-ad_proc -public im_dynfield::append_attribute_to_form {
-    -widget:required
-    -form_id:required
-    -datatype:required
-    -display_mode:required
-    -parameters:required
-    -required_p:required
-    -attribute_name:required
-    -pretty_name:required
-    -help_text:required
-    {-admin_html "" }
-    {-debug 1}
-} {
-    Append a single attribute to a form
+	
+	
+	ad_proc -public im_dynfield::append_attribute_to_form {
+	-widget:required
+	-form_id:required
+	-datatype:required
+	-display_mode:required
+	-parameters:required
+	-required_p:required
+	-attribute_name:required
+	-pretty_name:required
+	-help_text:required
+	{-admin_html "" }
+	{-debug 1}
+    } {
+	Append a single attribute to a form
 } {
     # Might translate the datatype into one for which we have a
     # validator (e.g. a string datatype would change into text).
@@ -1411,7 +1420,19 @@ ad_proc -public im_dynfield::append_attribute_to_form {
             if { [string eq $required_p "f"] && ![string eq $widget "checkbox"]} {
                 set option_parameters [linsert $option_parameters -1 [list " [_ intranet-dynfield.no_value] " ""]]
             }
+	    ns_log Notice "ATTRIB: $attribute_name \n
+                            -datatype \"text\" [ad_decode $required_p \"f\" \"-optional\" \"\"] \n
+                            -widget $widget \n
+                            -label $pretty_name \n
+                            -options $option_parameters \n
+                            -custom $custom_parameters \n
+                            -html $html_parameters \n
+                            -after_html $after_html || $after_html_parameters \n
+                            -mode $display_mode"
+
+
             if {![template::element::exists $form_id "$attribute_name"]} {
+
                 template::element create $form_id "$attribute_name" \
                     -datatype "text" [ad_decode $required_p "f" "-optional" ""] \
                     -widget $widget \
@@ -1420,7 +1441,8 @@ ad_proc -public im_dynfield::append_attribute_to_form {
                     -custom $custom_parameters \
                     -html $html_parameters \
                     -after_html "$after_html $after_html_parameters" \
-                    -mode $display_mode
+                    -mode $display_mode 
+
             }
         }
         date {
@@ -1437,6 +1459,8 @@ ad_proc -public im_dynfield::append_attribute_to_form {
             }
         }
         default {
+	    ns_log Notice "ATRIB $attribute_name"
+
             if {![template::element::exists $form_id "$attribute_name"]} {
                 template::element create $form_id "$attribute_name" \
                     -datatype $translated_datatype [ad_decode $required_p f "-optional" ""] \
@@ -1450,6 +1474,7 @@ ad_proc -public im_dynfield::append_attribute_to_form {
         }
     }
 }
+
 
 
 ad_proc -public im_dynfield::append_attributes_to_im_view {

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="intranet-trans-project-wizard" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Assigned_Tasks">Assigned Tasks</msg>
+  <msg key="Bills">Bills</msg>
+  <msg key="Execution_header">Execution Header</msg>
+  <msg key="Hours">Hours</msg>
+  <msg key="Invoices">Invoices</msg>
+  <msg key="Missing_Files">Missing Files</msg>
+  <msg key="Paid_Bills">Paid Bills</msg>
+  <msg key="Paid_Invoices">Paid Invoices</msg>
+  <msg key="Perc_Done">% Done</msg>
+  <msg key="POs">POs</msg>
+  <msg key="Trans_Tasks">Trans Tasks</msg>
+  <msg key="Translation_Project_Wizard">Translation Project Wizard</msg>
+  <msg key="Translators">Translators</msg>
+  <msg key="Upload_Missing_Files">Upload Missing Files</msg>
+</message_catalog>

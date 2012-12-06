@@ -3,7 +3,7 @@ ad_library {
 
   @creation-date 2006-02-02
   @author Gustaf Neumann
-  @cvs-id $Id: chat-procs.tcl,v 1.2 2011/02/28 12:19:33 po34demo Exp $  
+  @cvs-id $Id: chat-procs.tcl,v 1.18 2009/11/26 12:02:16 gustafn Exp $  
 }
 
 namespace eval ::xo {

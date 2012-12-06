@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="intranet-helpdesk" locale="pt_BR" charset="ISO-8859-1">
 
-  <msg key="Service_Mgmt">Serviços de TI</msg>
+  <msg key="Service_Mgmt">Gerência de Serviços de TI</msg>
 </message_catalog>

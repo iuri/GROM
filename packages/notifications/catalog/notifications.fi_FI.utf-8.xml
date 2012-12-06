@@ -11,7 +11,6 @@
   <msg key="lt_Request_Notification_">Haluan saada muistutuksen, kun %pretty_name% päivittyy</msg>
   <msg key="lt_system_name_-_Batched">[%system_name% - Erä uusia viestejä] </msg>
   <msg key="lt_You_have_no_notificat">Sinulla ei ole käytössä yhtään ilmoituspalvelua.</msg>
-  <msg key="lt_You_have_requested_no">Olet pyytänyt saada ilmoituksen uusista viesteistä ryhmässä %pretty_name%. Halutessasi voit &lt;a href=&quot;%sub_url%&quot;&gt;peruuttaa ilmoituspalvelun&lt;/a&gt;.</msg>
   <msg key="Manage_Notifications">Muokkaa ilmoituksia</msg>
   <msg key="Notification_type">Ilmoituksen tyyppi</msg>
   <msg key="Request_Notification">Tilaa ilmoitus</msg>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="fr_FR" charset="ISO-8859-1">
+<message_catalog package_key="intranet-core" locale="fr_FR" charset="ISO-8859-1">
 
   <msg key="--_Please_select_--">-- Veuillez sélectionner --</msg>
   <msg key="1111">1111</msg>
@@ -1436,6 +1436,7 @@ peuvent faire ou non.</msg>
   <msg key="Send_Notification">Envoyer une notification</msg>
   <msg key="Senior_Managers">Directeurs Sénior</msg>
   <msg key="senior_managers">Directeurs Sénior</msg>
+  <msg key="Service_L_Agreement">Contrat de niveau de service</msg>
   <msg key="sh">sh</msg>
   <msg key="Sick">Malade</msg>
   <msg key="Simple_Surveys">Etudes simples</msg>
@@ -1454,6 +1455,7 @@ peuvent faire ou non.</msg>
   <msg key="Software_Company">Software Company</msg>
   <msg key="Software_Development">Développement logiciel</msg>
   <msg key="Software_Maintenance">Entretien du logiciel</msg>
+  <msg key="Software_Rel_Item">Elément de la version logicielle</msg>
   <msg key="Software_Release">Version du logiciel</msg>
   <msg key="Software_Testing">Test de logiciel</msg>
   <msg key="Software_Updates">Mises à jour logiciel</msg>
@@ -1548,6 +1550,7 @@ peuvent faire ou non.</msg>
   <msg key="Trans__Edit">Trad Edit</msg>
   <msg key="Trans__Edit__Proof">Trad Edit Rel</msg>
   <msg key="Trans__Int_Spotcheck">Trad Contrôle inopiné</msg>
+  <msg key="Trans_Dynamic_WF">Trad uniquement (Dynamic WF)</msg>
   <msg key="Trans_Management">Gestion de la trad</msg>
   <msg key="Trans_Only">Trad uniquement</msg>
   <msg key="Trans_Tasks">Tâches de trad</msg>

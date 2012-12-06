@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="acs-lang" locale="pt_BR" charset="ISO-8859-1">
 
+  <msg key="Actions">Ações</msg>
   <msg key="available-in-this-language">Disponível em Português</msg>
   <msg key="change-locale">Alterar idioma</msg>
   <msg key="English">Inglês</msg>
@@ -40,9 +41,12 @@
   <msg key="localization-positive_sign">+</msg>
   <msg key="localization-t_fmt">%r</msg>
   <msg key="localization-thousands_sep">,</msg>
+  <msg key="Off">Desligado</msg>
+  <msg key="On">Ligado</msg>
   <msg key="Resolve_message_conflicts">Resolver mensagens conflitantes</msg>
   <msg key="Spanish">Espanhol</msg>
   <msg key="this-language">Português</msg>
+  <msg key="Toggle_translator_mode">Modo tradução</msg>
   <msg key="Translated_messages_on_this_page">Traduzir mensagens nesta página (%locale%)</msg>
   <msg key="Your_locale_for_package">Sua definição de localização para %package_name%. Uma vez configurada, esta definição irá sobrescrever a configuração estabelecida como padrão da instalação apenas para esta aplicação particular.</msg>
   <msg key="Your_locale_site_wide">Sua definição de localização padrão da instalação</msg>

@@ -193,6 +193,19 @@ if {$enable_project_path_p} {
 }
 
 
+
+template::element::create $form_id milestone_p \
+    -datatype "text" "" \
+    -widget checkbox \
+    -label "Release Item" \
+    -options "{\"\" t}" \
+    -custom "" \
+    -html "" \
+    -after_html "<a href='/intranet-dynfield/attribute-new?attribute%5fid=29046&return%5furl=%2fintranet%2fprojects%2findex%3ffilter%255fadvanced%255fp%3d1%26return%255furl%3d%252fintranet%252fprojects%252f'><img src='/intranet/images/navbar_default/wrench.png' border=0 title='' alt=''></a>" \
+    -mode edit
+
+
+
 if {$enable_nested_projects_p} {
 	
     # Create project list query.

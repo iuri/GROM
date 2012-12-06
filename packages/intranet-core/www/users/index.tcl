@@ -363,7 +363,9 @@ if {$filter_advanced_p} {
     im_dynfield::append_attributes_to_form \
         -object_type $object_type \
         -form_id $form_id \
-        -object_id 0
+        -object_id 0 \
+	-advanced_filter_p 1 
+#	-page_url "/intranet/users/index"
 
     # Set the form values from the HTTP form variable frame
     im_dynfield::set_form_values_from_http -form_id $form_id

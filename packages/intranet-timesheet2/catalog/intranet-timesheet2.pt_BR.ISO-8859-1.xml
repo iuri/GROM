@@ -9,6 +9,7 @@
   <msg key="absences">ausências</msg>
   <msg key="Absent">Ausente</msg>
   <msg key="Absent_1">Ausente:</msg>
+  <msg key="Add_hours">Alocar horas</msg>
   <msg key="Administration">Administração</msg>
   <msg key="All_dates">Todas as datas</msg>
   <msg key="All_projects">Todos os projetos</msg>
@@ -33,6 +34,13 @@
   <msg key="Date">Data</msg>
   <msg key="Day">Dia</msg>
   <msg key="Day_of_Expense">Dia da Despesa</msg>
+  <msg key="Day_of_week_Fri">Sex</msg>
+  <msg key="Day_of_week_Mon">Seg</msg>
+  <msg key="Day_of_week_Sat">Sab</msg>
+  <msg key="Day_of_week_Sun">Dom</msg>
+  <msg key="Day_of_week_Thu">Qui</msg>
+  <msg key="Day_of_week_Tue">Ter</msg>
+  <msg key="Day_of_week_Wed">Qua</msg>
   <msg key="DAYS">DIAS</msg>
   <msg key="days">dias</msg>
   <msg key="Dec">Dez</msg>
@@ -70,6 +78,7 @@
   <msg key="Last_3_months">Últimos 3 meses</msg>
   <msg key="Local">Local</msg>
   <msg key="log_hours">registrar horas</msg>
+  <msg key="Log_hours_for_the_week">Registrar horas na semana.</msg>
   <msg key="Log_your_hours">Registrar suas horas</msg>
   <msg key="lt_Add_hours_on_other_pr">Adicionar horas em outros projetos</msg>
   <msg key="lt_Choose_an_employee_to">Escolha um funcionário para ver as horas dele</msg>
@@ -98,7 +107,9 @@
   <msg key="November">Novembro</msg>
   <msg key="Oct">Out</msg>
   <msg key="October">Outubro</msg>
+  <msg key="Other_Options">Outras Opções</msg>
   <msg key="Project">Projeto</msg>
+  <msg key="Project_name">Nome do projeto</msg>
   <msg key="Rates">Tarifas</msg>
   <msg key="Saturday">Sábado</msg>
   <msg key="Save">Salvar</msg>
@@ -119,6 +130,8 @@
   <msg key="Sunday">Domingo</msg>
   <msg key="Tasks">Tarefas</msg>
   <msg key="Thursday">Quinta-feira</msg>
+  <msg key="Timesheet_for_user_name">Folha de Horas de %user_name%</msg>
+  <msg key="TimesheetFilters">Filtros</msg>
   <msg key="to">para:</msg>
   <msg key="Today">Hoje</msg>
   <msg key="Tools">Ferramentas:</msg>
@@ -137,5 +150,6 @@
   <msg key="Week">Semana</msg>
   <msg key="Week_total">Total semanal</msg>
   <msg key="Week_total_1">Total semanal:</msg>
+  <msg key="Work_done">Trabalho executado</msg>
   <msg key="Your_hours">Suas horas</msg>
 </message_catalog>

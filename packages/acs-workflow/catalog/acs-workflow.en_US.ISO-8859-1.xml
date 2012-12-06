@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<message_catalog package_key="acs-workflow" package_version="4.5.3" locale="en_US" charset="ISO-8859-1">
+<message_catalog package_key="acs-workflow" locale="en_US" charset="ISO-8859-1">
 
   <msg key="As_part_of">Part of</msg>
   <msg key="On_what">On what?</msg>
+  <msg key="Task_not_found">Task not found</msg>
+  <msg key="Task_not_found_message">This error can occur if a system administrator has deleted a workflow.&lt;br&gt;This situation should not occur during normal operations.&lt;p&gt;Please contact your System Administrator</msg>
   <msg key="To_Do">To Do</msg>
 </message_catalog>

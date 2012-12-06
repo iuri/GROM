@@ -5,7 +5,7 @@ ad_library {
 
   @author Gustaf Neumann, Stefan Sobernig
   @creation-date 2007-10-05
-  @cvs-id $Id: http-client-procs.tcl,v 1.2 2011/02/28 12:19:34 po34demo Exp $
+  @cvs-id $Id: http-client-procs.tcl,v 1.28 2010/09/13 17:28:44 stefans Exp $
 }
 
 namespace eval ::xo {

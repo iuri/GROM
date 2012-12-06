@@ -12,7 +12,6 @@
   <msg key="lt_Request_Notification_">Be om meldinger %pretty_name% </msg>
   <msg key="lt_system_name_-_Batched">[%system_name% - Batched Notification] </msg>
   <msg key="lt_You_have_no_notificat">Du har ingen meldinger</msg>
-  <msg key="lt_You_have_requested_no">Du har bedt om meldinger for %pretty_name%. Du kan &lt;a href=&quot;%sub_url%&quot;&gt;kansellere&lt;/a&gt;.</msg>
   <msg key="Manage_Notifications">Organiser meldinger</msg>
   <msg key="Notification_type">Meldingstype</msg>
   <msg key="Request_Notification">Be om melding</msg>

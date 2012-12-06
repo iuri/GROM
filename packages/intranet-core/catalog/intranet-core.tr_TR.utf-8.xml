@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<message_catalog package_key="intranet-core" package_version="3.4.0.7.0" locale="tr_TR" charset="utf-8">
+<message_catalog package_key="intranet-core" locale="tr_TR" charset="utf-8">
 
   <msg key="--_Please_select_--">-- Lütfen Seçin --</msg>
   <msg key="1111">1111</msg>
@@ -508,6 +508,7 @@
   <msg key="Timesheet">Saat Girişi</msg>
   <msg key="Today">Bugün</msg>
   <msg key="Top_Menu">EnÜst Menü</msg>
+  <msg key="Trans_Dynamic_WF">Sadece Çeviri (Dinamik İş Akışı)</msg>
   <msg key="Trans_Tasks">Çeviri Görevleri</msg>
   <msg key="Translation">Tercüme</msg>
   <msg key="Translation_Project">Tercüme Projesi</msg>
