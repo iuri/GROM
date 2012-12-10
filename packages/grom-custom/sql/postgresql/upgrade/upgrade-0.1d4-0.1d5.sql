@@ -34,3 +34,7 @@ END;' language 'plpgsql';
 
 SELECT inline_0 ();
 DROP FUNCTION inline_0 ();
+
+\echo 'date'
+
+\i /usr/share/postgresql/8.4/contrib/tsearch2.sql

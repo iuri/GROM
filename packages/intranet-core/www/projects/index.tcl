@@ -294,7 +294,6 @@ if {$filter_advanced_p} {
 	set filter_admin_url [export_vars -base "/intranet-dynfield/layout-position" {{object_type im_project} {page_url "/intranet/projects/index"}}]
 	set filter_admin_html "<a href='$filter_admin_url'>[im_gif wrench]</a>"
     }
-
 }
 
 # ---------------------------------------------------------------
@@ -838,8 +837,8 @@ set project_navbar_html [\
 
 # Compile and execute the formtemplate if advanced filtering is enabled.
 eval [template::adp_compile -string {<formtemplate id="project_filter" style="tiny-plain"></formtemplate>}]
+#set filter_html "<formtemplate id=project_filter style=tiny-plain></formtemplate>"
 set filter_html $__adp_output
-
 
 # Left Navbar is the filter/select part of the left bar
 set left_navbar_html "

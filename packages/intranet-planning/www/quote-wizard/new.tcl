@@ -341,6 +341,9 @@ if {"" != $cost_type_id} {
 	$cost_type
     "
 }
+set customer_id [db_string select_customer_id {
+    SELECT company_id FROM im_projects WHERE project_id = :project_id 
+}]
 
 set customer_select [im_company_select -tag_attributes {onchange "ajaxFunction();" onkeyup "ajaxFunction();"} customer_id $customer_id "" "CustOrIntl"]
 set provider_select [im_company_select -tag_attributes {onchange "ajaxFunction();" onkeyup "ajaxFunction();"} provider_id $provider_id "" "Provider"]
