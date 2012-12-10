@@ -1415,24 +1415,13 @@ is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core
     # ToDo: Can we unify this switch?
     # Is there a problem to pass an "options" parameter to a date widget?
     switch $widget {
-        checkbox - radio - select - multiselect - im_category_tree - category_tree {
+	checkbox - radio - select - multiselect - im_category_tree - category_tree {
 	    # These widgets need an additional -options parameter
             if { [string eq $required_p "f"] && ![string eq $widget "checkbox"]} {
                 set option_parameters [linsert $option_parameters -1 [list " [_ intranet-dynfield.no_value] " ""]]
             }
-	    ns_log Notice "ATTRIB: $attribute_name \n
-                            -datatype \"text\" [ad_decode $required_p \"f\" \"-optional\" \"\"] \n
-                            -widget $widget \n
-                            -label $pretty_name \n
-                            -options $option_parameters \n
-                            -custom $custom_parameters \n
-                            -html $html_parameters \n
-                            -after_html $after_html || $after_html_parameters \n
-                            -mode $display_mode"
 
-
-            if {![template::element::exists $form_id "$attribute_name"]} {
-
+	    if {![template::element::exists $form_id "$attribute_name"]} {
                 template::element create $form_id "$attribute_name" \
                     -datatype "text" [ad_decode $required_p "f" "-optional" ""] \
                     -widget $widget \
@@ -1441,8 +1430,8 @@ is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core
                     -custom $custom_parameters \
                     -html $html_parameters \
                     -after_html "$after_html $after_html_parameters" \
-                    -mode $display_mode 
-
+		    -mode $display_mode 
+		
             }
         }
         date {
@@ -1459,7 +1448,6 @@ is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core
             }
         }
         default {
-	    ns_log Notice "ATRIB $attribute_name"
 
             if {![template::element::exists $form_id "$attribute_name"]} {
                 template::element create $form_id "$attribute_name" \
