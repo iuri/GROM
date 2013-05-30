@@ -268,6 +268,7 @@ ad_form -extend -name $form_id -form {
     {user_id_from_search:text(select),optional {label \#intranet-core.With_Member\#} {options $user_options}}
     {start_date:text(text) {label "[_ intranet-timesheet2.Start_Date]"} {value "$start_date"} {html {size 10}} {after_html {<input type="button" style="height:20px; width:20px; background: url('/resources/acs-templating/calendar.gif');" onclick ="return showCalendar('start_date', 'y-m-d');" >}}}
     {end_date:text(text) {label "[_ intranet-timesheet2.End_Date]"} {value "$end_date"} {html {size 10}} {after_html {<input type="button" style="height:20px; width:20px; background: url('/resources/acs-templating/calendar.gif');" onclick ="return showCalendar('end_date', 'y-m-d');" >}}}
+
 }
 
 set filter_admin_html ""
@@ -836,9 +837,12 @@ set project_navbar_html [\
 			    ]
 
 # Compile and execute the formtemplate if advanced filtering is enabled.
-eval [template::adp_compile -string {<formtemplate id="project_filter" style="tiny-plain"></formtemplate>}]
+eval [template::adp_compile -string "<formtemplate id=\"project_filter\" style=\"tiny-plain\"></formtemplate>"]
 #set filter_html "<formtemplate id=project_filter style=tiny-plain></formtemplate>"
 set filter_html $__adp_output
+
+ns_log Notice "************************************"
+ns_log Notice "$filter_html"
 
 # Left Navbar is the filter/select part of the left bar
 set left_navbar_html "

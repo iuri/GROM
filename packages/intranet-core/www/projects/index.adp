@@ -7,7 +7,6 @@
 <property name="show_context_help">@show_context_help_p;noquote@</property>
 
 <SCRIPT Language=JavaScript src=/resources/diagram/diagram/diagram.js></SCRIPT>
-
 <if 0 eq @plugin_id@>
 
 	<table cellspacing=0 cellpadding=0 border=0 width="100%">

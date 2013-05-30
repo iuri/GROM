@@ -1335,20 +1335,20 @@ is part of the list 'object_types' in ~/packages/intranet-core/tcl/intranet-core
 
 	
 	
-	ad_proc -public im_dynfield::append_attribute_to_form {
-	-widget:required
-	-form_id:required
-	-datatype:required
-	-display_mode:required
-	-parameters:required
-	-required_p:required
-	-attribute_name:required
-	-pretty_name:required
-	-help_text:required
-	{-admin_html "" }
-	{-debug 1}
-    } {
-	Append a single attribute to a form
+ad_proc -public im_dynfield::append_attribute_to_form {
+    -widget:required
+    -form_id:required
+    -datatype:required
+    -display_mode:required
+    -parameters:required
+    -required_p:required
+    -attribute_name:required
+    -pretty_name:required
+    -help_text:required
+    {-admin_html "" }
+    {-debug 1}
+} {
+    Append a single attribute to a form
 } {
     # Might translate the datatype into one for which we have a
     # validator (e.g. a string datatype would change into text).
